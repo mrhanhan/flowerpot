@@ -21,6 +21,7 @@
     |   ├── flowerapot-admin-dao      -- admin 数据模块
     |   ├── flowerapot-admin-api      -- admin 功能接口模块
     |   ├── flowerapot-admin-service  -- admin 功能实现模块
+    |   ├── flowerapot-admin-web      -- admin 外部接口模块
     
 ```
     

@@ -3,21 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>flowerpot</artifactId>
+        <artifactId>flowerpot-admin</artifactId>
         <groupId>com.flowerpot</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>flowerpot-admin</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>flowerpot-admin-common</module>
-        <module>flowerpot-admin-dao</module>
-        <module>flowerpot-admin-api</module>
-        <module>flowerpot-admin-service</module>
-        <module>flowerpot-admin-web</module>
-    </modules>
+    <artifactId>flowerpot-admin-dao</artifactId>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
