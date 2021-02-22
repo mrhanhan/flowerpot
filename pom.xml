@@ -41,12 +41,15 @@
                 <artifactId>flowerpot-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
             <!-- Admin 后台模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-admin</artifactId>
                 <version>${project.version}</version>
+                <type>pom</type>
             </dependency>
+
 
             <!-- Spring Boot Dependencies-->
             <dependency>

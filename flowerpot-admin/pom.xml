@@ -24,4 +24,41 @@
         <maven.compiler.target>13</maven.compiler.target>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- Admin Common -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-admin-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Admin Dao -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-admin-dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Admin Api -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-admin-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Admin Service -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-admin-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Admin Web -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-admin-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
 </project>
