@@ -1,1 +1,1 @@
-#花盆![logo](./doc/images/logo.gif =48×48)
+#花盆![logo](./doc/images/logo.gif)
