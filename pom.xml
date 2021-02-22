@@ -4,13 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.flowerpot</groupId>
     <artifactId>flowerpot</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>flowerpot-common</module>
+        <module>flowerpot-admin</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
 
+        <project.version>1.0-SNAPSHOT</project.version>
         <jwt.version>3.10.3</jwt.version>
         <fastjson.version>1.2.70</fastjson.version>
 
@@ -28,6 +33,21 @@
     <!-- 管理依赖 -->
     <dependencyManagement>
         <dependencies>
+
+            <!-- 本身模块 -->
+            <!-- Common 模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Admin 后台模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-admin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- Spring Boot Dependencies-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
