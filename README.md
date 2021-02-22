@@ -6,11 +6,24 @@
 </p>
 <hr/>
 
-### 项目说明
+### 起源
 <p style="text-indent: 2em;">
     花盆项目灵感来哦源于舍友玩的植物大战僵尸中的花盆。想要有所成就，守卫家园保护大脑不被僵尸吃掉，就需要在花盆里种植植物进行在花盆中种植植物进抵挡僵尸的进攻。
 </p>
 
+### 模块说明
+
+```lua
+    flowerapot
+    ├── flowerapot-common   -- 通用模块
+    ├── flowerapot-admin    -- admin 模块
+    |   ├── flowerapot-admin-common   -- admin 通用模块
+    |   ├── flowerapot-admin-dao      -- admin 数据模块
+    |   ├── flowerapot-admin-api      -- admin 功能接口模块
+    |   ├── flowerapot-admin-service  -- admin 功能实现模块
+    
+```
+    
 ### 技术栈
 
 |技术名称|版本|说明|
