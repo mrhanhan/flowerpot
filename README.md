@@ -1,8 +1,8 @@
-<p style="text-align: center;">
+<p style="text-align: center;" align="center">
     <img src="https://gitee.com/nut-cloud/flowerpot/raw/master/doc/images/logo.gif" alt="花盆">
 </p>
-<p style="text-align: center;">
-    <h2  style="text-align: center;">花盆</h2>
+<p style="text-align: center;"  align="center">
+    <h2  style="text-align: center;"  align="center">花盆</h2>
 </p>
 <hr/>
 
