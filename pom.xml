@@ -13,9 +13,21 @@
     </modules>
     <packaging>pom</packaging>
 
+    <!--  -->
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <layout>default</layout>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
     <properties>
 
         <project.version>1.0-SNAPSHOT</project.version>
+
+        <springfox.version>2.9.2</springfox.version>
         <jwt.version>3.10.3</jwt.version>
         <fastjson.version>1.2.70</fastjson.version>
 
@@ -109,6 +121,18 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+            <!-- 文档 Swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
