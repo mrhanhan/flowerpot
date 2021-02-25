@@ -15,13 +15,15 @@
 
 ```lua
     flowerapot
-    ├── flowerapot-common   -- 通用模块
-    ├── flowerapot-admin    -- admin 模块
-    |   ├── flowerapot-admin-common   -- admin 通用模块
-    |   ├── flowerapot-admin-dao      -- admin 数据模块
-    |   ├── flowerapot-admin-api      -- admin 功能接口模块
-    |   ├── flowerapot-admin-service  -- admin 功能实现模块
-    |   ├── flowerapot-admin-web      -- admin 外部接口模块
+    ├── flowerapot-code-generator           -- 代码生成器模块
+    |   ├── flowerpot-universal-code-generator  -- 通用的代码生成器
+    ├── flowerapot-admin                    -- admin 模块
+    |   ├── flowerapot-admin-common             -- admin 通用模块
+    |   ├── flowerapot-admin-dao                -- admin 数据模块
+    |   ├── flowerapot-admin-api                -- admin 功能接口模块
+    |   ├── flowerapot-admin-service            -- admin 功能实现模块
+    |   ├── flowerapot-admin-web                -- admin 外部接口模块
+    ├── flowerapot-common                   -- 通用模块
     
 ```
     

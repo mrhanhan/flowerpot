@@ -10,6 +10,7 @@
     <modules>
         <module>flowerpot-common</module>
         <module>flowerpot-admin</module>
+        <module>flowerpot-code-generator</module>
     </modules>
     <packaging>pom</packaging>
 
