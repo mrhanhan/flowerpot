@@ -2,17 +2,16 @@ package com.flowerpot.common.utils.token;
 
 import com.auth0.jwt.interfaces.Claim;
 import com.flowerpot.common.enums.AlgorithmProviderEnum;
-import com.flowerpot.common.utils.token.AlgorithmProvider;
 import com.flowerpot.common.utils.token.claim.JwtClaim;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.lang.invoke.SerializedLambda;
-import java.nio.file.attribute.AclEntry;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +28,8 @@ import java.util.UUID;
 @Accessors
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter(value = AccessLevel.PACKAGE)
+@Setter(value = AccessLevel.PACKAGE)
 public class JwtTokenSubject {
 
     /**
@@ -368,89 +369,5 @@ public class JwtTokenSubject {
         claimMap.put(name, claim);
         claimDataMap.put(name, claim.getValue());
         return this;
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // GET SET
-    // -----------------------------------------------------------------------------------------------------------------
-
-    String getId() {
-        return id;
-    }
-
-     void setId(String id) {
-        this.id = id;
-    }
-
-     String getSubject() {
-        return subject;
-    }
-
-     void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-     String getIssuer() {
-        return issuer;
-    }
-
-     void setIssuer(String issuer) {
-        this.issuer = issuer;
-    }
-
-     String[] getAudiences() {
-        return audiences;
-    }
-
-     void setAudiences(String[] audiences) {
-        this.audiences = audiences;
-    }
-
-     Date getIssuedAt() {
-        return issuedAt;
-    }
-
-     void setIssuedAt(Date issuedAt) {
-        this.issuedAt = issuedAt;
-    }
-
-     Date getExpiresAt() {
-        return expiresAt;
-    }
-
-     void setExpiresAt(Date expiresAt) {
-        this.expiresAt = expiresAt;
-    }
-
-     AlgorithmProvider getAlgorithmProvider() {
-        return algorithmProvider;
-    }
-
-     void setAlgorithmProvider(AlgorithmProvider algorithmProvider) {
-        this.algorithmProvider = algorithmProvider;
-    }
-
-     Map<String, Object> getHeaderMap() {
-        return headerMap;
-    }
-
-     void setHeaderMap(Map<String, Object> headerMap) {
-        this.headerMap = headerMap;
-    }
-
-     Map<String, JwtClaim<?>> getClaimMap() {
-        return claimMap;
-    }
-
-     void setClaimMap(Map<String, JwtClaim<?>> claimMap) {
-        this.claimMap = claimMap;
-    }
-
-     Map<String, Object> getClaimDataMap() {
-        return claimDataMap;
-    }
-
-     void setClaimDataMap(Map<String, Object> claimDataMap) {
-        this.claimDataMap = claimDataMap;
     }
 }
