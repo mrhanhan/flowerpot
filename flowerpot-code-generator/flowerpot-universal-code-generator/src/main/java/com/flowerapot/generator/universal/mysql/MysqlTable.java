@@ -6,5 +6,6 @@ package com.flowerapot.generator.universal.mysql;
  * @author Mrhan
  * @date 2021/2/26 0:21
  */
-public class Mysql {
+public class MysqlTable {
+
 }
