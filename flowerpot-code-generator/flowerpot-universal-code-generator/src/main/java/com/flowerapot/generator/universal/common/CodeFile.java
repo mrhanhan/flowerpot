@@ -57,6 +57,17 @@ public interface CodeFile extends AutoCloseable{
     }
 
     /**
+     * 写入字符串
+     * @param str       String
+     * @param params    参数
+     * @return          CodeFile
+     */
+    default CodeFile write(String str, Object ...params) {
+        getWriter().write(String.format(str, params));
+        return this;
+    }
+
+    /**
      * 新的一行
      * @param count         换行数量
      * @return CodeFile
