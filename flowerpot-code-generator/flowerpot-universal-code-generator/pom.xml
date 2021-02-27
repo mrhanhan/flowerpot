@@ -32,6 +32,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

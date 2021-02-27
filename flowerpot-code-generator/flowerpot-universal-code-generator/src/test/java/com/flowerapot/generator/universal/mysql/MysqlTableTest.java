@@ -6,6 +6,7 @@ import com.flowerapot.generator.universal.common.CodeFileInfo;
 import com.flowerapot.generator.universal.common.CommonCodeFileInfo;
 import com.flowerapot.generator.universal.common.DataTypeEnum;
 import com.flowerapot.generator.universal.mysql.model.TableColumn;
+import com.flowerapot.generator.universal.utils.CodeFileUtils;
 import com.flowerapot.generator.universal.utils.Console;
 
 import java.io.PrintWriter;
@@ -25,5 +26,7 @@ public class MysqlTableTest {
         mysqlTable.generator(file);
         mysqlTable.generator(file);
         Console.print(file.getInputStream());
+
+        CodeFileUtils.writeToFile(file, MysqlTableTest.class.getResource("").getFile() + "/a.sql");
     }
 }
