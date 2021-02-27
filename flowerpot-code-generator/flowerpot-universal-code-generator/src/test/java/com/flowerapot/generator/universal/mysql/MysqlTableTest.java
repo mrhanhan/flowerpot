@@ -27,6 +27,6 @@ public class MysqlTableTest {
         mysqlTable.generator(file);
         Console.print(file.getInputStream());
 
-        CodeFileUtils.writeToFile(file, MysqlTableTest.class.getResource("").getFile() + "/a.sql");
+        CodeFileUtils.writeToFile(file, MysqlTableTest.class.getResource("").getFile());
     }
 }

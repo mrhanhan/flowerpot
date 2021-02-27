@@ -34,9 +34,6 @@ public class CodeFileUtils {
         File writeFile = new File(path);
         if (!writeFile.exists()) {
             boolean newFile = writeFile.createNewFile();
-            if (newFile) {
-                throw new FileNotFoundException("文件创建失败");
-            }
         }
         FileOutputStream fileOutputStream = new FileOutputStream(writeFile);
         IoUtils.writeTo(file.getInputStream(), fileOutputStream);
