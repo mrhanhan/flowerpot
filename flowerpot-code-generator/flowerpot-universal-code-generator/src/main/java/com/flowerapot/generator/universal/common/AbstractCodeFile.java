@@ -1,8 +1,11 @@
 package com.flowerapot.generator.universal.common;
 
+import lombok.SneakyThrows;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 /**
@@ -19,19 +22,14 @@ public class AbstractCodeFile implements CodeFile {
     private final ByteArrayOutputStream outputStream;
 
     /**
-     * 字符流
-     */
-    private final PrintWriter writer;
-
-    /**
      * 代码文件信息
      */
     private final CodeFileInfo info;
 
+    @SneakyThrows
     public AbstractCodeFile(CodeFileInfo info) {
         this.info = info;
         this.outputStream = new ByteArrayOutputStream();
-        this.writer = new PrintWriter(this.outputStream);
     }
 
     @Override
@@ -40,8 +38,8 @@ public class AbstractCodeFile implements CodeFile {
     }
 
     @Override
-    public PrintWriter getWriter() {
-        return writer;
+    public ByteArrayOutputStream getOutputStream() {
+        return outputStream;
     }
 
     @Override

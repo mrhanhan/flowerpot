@@ -1,6 +1,9 @@
 package com.flowerapot.generator.universal.common;
 
+import lombok.SneakyThrows;
+
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 
 /**
@@ -21,7 +24,7 @@ public interface CodeFile extends AutoCloseable{
      * 获取CodeInfo字符输入流
      * @return  PrintWriter
      */
-    PrintWriter getWriter();
+    OutputStream getOutputStream();
 
     /**
      * CodeInfo获取输出流
@@ -39,7 +42,9 @@ public interface CodeFile extends AutoCloseable{
      * @return CodeFile
      */
     default CodeFile writeTab(int tabCount) {
-        writeSpace(4);
+        for (int i = 0; i < tabCount; i++) {
+            writeSpace(4);
+        }
         return this;
     }
 
@@ -48,10 +53,10 @@ public interface CodeFile extends AutoCloseable{
      * @param count         空格数量
      * @return CodeFile
      */
+    @SneakyThrows
     default CodeFile writeSpace(int count) {
-        PrintWriter writer = getWriter();
         for (int i = 0; i < count; i++) {
-            writer.print(" ");
+            write(" ");
         }
         return this;
     }
@@ -62,8 +67,9 @@ public interface CodeFile extends AutoCloseable{
      * @param params    参数
      * @return          CodeFile
      */
+    @SneakyThrows
     default CodeFile write(String str, Object ...params) {
-        getWriter().write(String.format(str, params));
+        getOutputStream().write(String.format(str, params).getBytes());
         return this;
     }
 
@@ -72,12 +78,13 @@ public interface CodeFile extends AutoCloseable{
      * @param count         换行数量
      * @return CodeFile
      */
+    @SneakyThrows
     default CodeFile newLine(int count) {
-        PrintWriter writer = getWriter();
         for (int i = 0; i < count; i++) {
-            writer.print("\n");
+            write("\n");
         }
         return this;
     }
+
 
 }

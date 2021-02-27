@@ -1,7 +1,10 @@
 package com.flowerapot.generator.universal.mysql.model;
 
 import com.flowerapot.generator.universal.common.DataTypeEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
@@ -12,6 +15,9 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class TableColumn {
 
     /**
@@ -43,4 +49,6 @@ public class TableColumn {
      * 表信息
      */
     private String comment;
+
+
 }
