@@ -28,6 +28,9 @@
     <properties>
 
         <project.version>1.0-SNAPSHOT</project.version>
+        <flowerpot.admin.version>1.0-SNAPSHOT</flowerpot.admin.version>
+        <flowerpot.common.version>1.0-SNAPSHOT</flowerpot.common.version>
+        <flowerpot.service.version>1.0-SNAPSHOT</flowerpot.service.version>
 
         <springfox.version>2.9.2</springfox.version>
         <jwt.version>3.10.3</jwt.version>
@@ -55,18 +58,23 @@
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-common</artifactId>
-                <version>${project.version}</version>
+                <version>${flowerpot.common.version}</version>
             </dependency>
 
             <!-- Admin 后台模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-admin</artifactId>
-                <version>${project.version}</version>
+                <version>${flowerpot.admin.version}</version>
                 <type>pom</type>
             </dependency>
-
-
+            <!-- Flowerpot Service 模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-service</artifactId>
+                <version>${flowerpot.service.version}</version>
+                <type>pom</type>
+            </dependency>
             <!-- Spring Boot Dependencies-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>

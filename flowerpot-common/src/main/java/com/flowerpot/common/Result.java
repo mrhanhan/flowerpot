@@ -14,6 +14,7 @@ import lombok.Data;
 @Data
 @ApiModel
 public class Result<T> {
+
     @ApiModelProperty("消息")
     private String message;
     @ApiModelProperty("数据")

@@ -20,6 +20,19 @@ public class BaseEntity implements Serializable {
      */
     @TableField(fill = FieldFill.INSERT)
     private Long id;
+
+    /**
+     * 创建者
+     */
+    @TableField(value = "create_by", fill = FieldFill.INSERT)
+    private Long createBy;
+
+    /**
+     * 更改者
+     */
+    @TableField(value = "modify_by", fill = FieldFill.INSERT_UPDATE)
+    private Long modifyBy;
+
     /**
      * 创建时间
      */
@@ -28,7 +41,7 @@ public class BaseEntity implements Serializable {
     /**
      * 更改时间
      */
-    @TableField(value = "modify_time", fill = FieldFill.INSERT)
+    @TableField(value = "modify_time", fill = FieldFill.INSERT_UPDATE)
     private Date modifyTime;
 
 }

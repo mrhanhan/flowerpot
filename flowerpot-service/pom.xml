@@ -16,12 +16,29 @@
     <description>
         花盆服务模块
     </description>
+
     <modules>
         <module>flowerpot-system-service</module>
     </modules>
+
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
+
+        <flowerpot.system.service.version>1.0-SNAPSHOT</flowerpot.system.service.version>
+
     </properties>
 
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- System Service 模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-system-service</artifactId>
+                <version>${flowerpot.system.service.version}</version>
+                <type>pom</type>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 </project>
