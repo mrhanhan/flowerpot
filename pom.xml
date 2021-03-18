@@ -11,6 +11,7 @@
         <module>flowerpot-common</module>
         <module>flowerpot-admin</module>
         <module>flowerpot-code-generator</module>
+        <module>flowerpot-service</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -99,6 +100,13 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
             </dependency>
+            <!-- 代码生成器 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
             <!-- Jwt Token -->
             <dependency>
                 <groupId>com.auth0</groupId>
@@ -142,7 +150,6 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
