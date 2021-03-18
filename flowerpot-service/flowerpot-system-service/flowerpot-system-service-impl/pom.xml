@@ -12,8 +12,20 @@
     <artifactId>flowerpot-system-service-impl</artifactId>
 
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <!-- Flowerpot System Service Dao -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-system-service-dao</artifactId>
+        </dependency>
+
+        <!-- Flowerpot System Service Api -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-system-service-api</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

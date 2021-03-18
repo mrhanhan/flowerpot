@@ -12,8 +12,14 @@
     <artifactId>flowerpot-system-service-api</artifactId>
 
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
+
     </properties>
 
+    <dependencies>
+        <!-- Flowerpot System Service Common -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-system-service-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -22,7 +22,8 @@ create table `sys_menu`
     `create_time`   datetime     not null default current_timestamp comment '创建时间',
     `create_by`     bigint                default 0 comment '创建人',
     `modify_time`   datetime              default current_timestamp comment '修改时间',
-    `modify_by`     bigint                default 0 comment '修改人'
+    `modify_by`     bigint                default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '系统菜单栏表';
 
 
@@ -41,7 +42,8 @@ create table `sys_role`
     `create_time` datetime     not null default current_timestamp comment '创建时间',
     `create_by`   bigint                default 0 comment '创建人',
     `modify_time` datetime              default current_timestamp comment '修改时间',
-    `modify_by`   bigint                default 0 comment '修改人'
+    `modify_by`   bigint                default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '系统角色表';
 
 
@@ -59,7 +61,8 @@ create table `sys_dept`
     `create_time`     datetime     not null default current_timestamp comment '创建时间',
     `create_by`       bigint                default 0 comment '创建人',
     `modify_time`     datetime              default current_timestamp comment '修改时间',
-    `modify_by`       bigint                default 0 comment '修改人'
+    `modify_by`       bigint                default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '系统部门表';
 
 /**
@@ -76,7 +79,8 @@ create table `sys_dept_permission`
     `create_time` datetime   not null default current_timestamp comment '创建时间',
     `create_by`   bigint              default 0 comment '创建人',
     `modify_time` datetime            default current_timestamp comment '修改时间',
-    `modify_by`   bigint              default 0 comment '修改人'
+    `modify_by`   bigint              default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '部门数据权限表';
 
 /**
@@ -95,7 +99,8 @@ create table `sys_dept_permission_item`
     `create_time`        datetime   not null default current_timestamp comment '创建时间',
     `create_by`          bigint              default 0 comment '创建人',
     `modify_time`        datetime            default current_timestamp comment '修改时间',
-    `modify_by`          bigint              default 0 comment '修改人'
+    `modify_by`          bigint              default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '部门数据权限明细表';
 
 /**
@@ -115,7 +120,8 @@ create table `sys_user`
     `create_time` datetime    not null default current_timestamp comment '创建时间',
     `create_by`   bigint               default 0 comment '创建人',
     `modify_time` datetime             default current_timestamp comment '修改时间',
-    `modify_by`   bigint               default 0 comment '修改人'
+    `modify_by`   bigint               default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '系统用户表';
 /**
   用户信息表
@@ -131,5 +137,6 @@ create table `sys_user_info`
     `create_time` datetime     not null default current_timestamp comment '创建时间',
     `create_by`   bigint                default 0 comment '创建人',
     `modify_time` datetime              default current_timestamp comment '修改时间',
-    `modify_by`   bigint                default 0 comment '修改人'
+    `modify_by`   bigint                default 0 comment '修改人',
+    `effective`          tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '系统用户信息表';

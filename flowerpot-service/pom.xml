@@ -27,6 +27,24 @@
 
     </properties>
 
+    <!-- 共同依赖的模块  -->
+    <dependencies>
+
+        <!-- Mybatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Flowerpot Common -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-common</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

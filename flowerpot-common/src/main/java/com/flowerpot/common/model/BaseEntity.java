@@ -44,4 +44,9 @@ public class BaseEntity implements Serializable {
     @TableField(value = "modify_time", fill = FieldFill.INSERT_UPDATE)
     private Date modifyTime;
 
+    /**
+     * 记录是否是有效的
+     */
+    @TableField(fill = FieldFill.INSERT)
+    private Integer effective;
 }
