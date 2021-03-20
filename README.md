@@ -47,5 +47,6 @@
 |----|----|----|-----|
 |Vue    |3.x.x|前端框架|[https://vue3js.cn](https://vue3js.cn/)|
 
-
+### 踩坑
+1. [Maven包依赖管理](./doc/maven.doc)
  
