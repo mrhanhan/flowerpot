@@ -12,10 +12,6 @@
     <artifactId>flowerpot-admin</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>flowerpot-admin-common</module>
-        <module>flowerpot-admin-dao</module>
-        <module>flowerpot-admin-api</module>
-        <module>flowerpot-admin-service</module>
         <module>flowerpot-admin-web</module>
     </modules>
 
