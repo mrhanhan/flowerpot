@@ -32,6 +32,9 @@
         <flowerpot.common.version>1.0-SNAPSHOT</flowerpot.common.version>
         <flowerpot.service.version>1.0-SNAPSHOT</flowerpot.service.version>
 
+        <flowerpot.system.service.version>1.0-SNAPSHOT</flowerpot.system.service.version>
+
+
         <springfox.version>2.9.2</springfox.version>
         <jwt.version>3.10.3</jwt.version>
         <fastjson.version>1.2.70</fastjson.version>
@@ -75,12 +78,21 @@
                 <version>${flowerpot.service.version}</version>
                 <type>pom</type>
             </dependency>
+            <!-- System Service 模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-system-service</artifactId>
+                <version>${flowerpot.system.service.version}</version>
+                <type>pom</type>
+            </dependency>
+
             <!-- Spring Boot Dependencies-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <!-- Spring Cloud  Dependencies -->
             <dependency>
@@ -88,6 +100,7 @@
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring.cloud.version}</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <!-- Lombok -->
             <dependency>

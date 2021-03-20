@@ -3,8 +3,6 @@ import com.intellij.database.util.Case
 import com.intellij.database.util.DasUtil
 
 import java.text.SimpleDateFormat
-import java.util.HashSet
-import java.util.Arrays
 /*
  * Available context bindings:
  *   SELECTION   Iterable<DasObject>

@@ -12,8 +12,33 @@
     <artifactId>flowerpot-admin-web</artifactId>
 
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
     </properties>
+
+    <dependencies>
+
+        <!-- 通用模块 -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-common</artifactId>
+        </dependency>
+        <!-- 系统服务模块 -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-system-service-impl</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Starter Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Spring Boot Starter Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

@@ -21,12 +21,6 @@
         <module>flowerpot-system-service</module>
     </modules>
 
-    <properties>
-
-        <flowerpot.system.service.version>1.0-SNAPSHOT</flowerpot.system.service.version>
-
-    </properties>
-
     <!-- 共同依赖的模块  -->
     <dependencies>
 
@@ -46,17 +40,4 @@
 
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-
-            <!-- System Service 模块 -->
-            <dependency>
-                <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-system-service</artifactId>
-                <version>${flowerpot.system.service.version}</version>
-                <type>pom</type>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
 </project>
