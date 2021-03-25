@@ -38,7 +38,46 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- Mybatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <!-- Mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
     </dependencies>
 
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${pom.basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**.yml</include>
+                    <include>**.properties</include>
+                </includes>
+                <!-- 可以根据maven来配置 -->
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${pom.basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**.yml</exclude>
+                    <exclude>**.properties</exclude>
+                </excludes>
+                <!-- 不去过滤 -->
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${pom.basedir}/../../sql</directory>
+                <includes>
+                    <include>*.sql</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 
 </project>

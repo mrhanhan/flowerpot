@@ -12,8 +12,8 @@ public class UniqueCodeGen {
     /**
      * ID 生成器
      */
-    private final static cn.seraph.common.utils.Snowflake GEN_ID = new cn.seraph.common.utils.Snowflake(1);
-    private final static cn.seraph.common.utils.Snowflake GEN_ORDER_NUMBER = new cn.seraph.common.utils.Snowflake(2);
+    private final static Snowflake GEN_ID = new Snowflake(1);
+    private final static Snowflake GEN_ORDER_NUMBER = new Snowflake(2);
 
     /**
      * 生成ID

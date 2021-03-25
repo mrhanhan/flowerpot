@@ -4,4 +4,26 @@ spring:
   application:
     name: flowerpot-admin-web
 
+  # 数据源
+  datasource:
+    url: jdbc:mysql://192.168.198.136:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: mrhan
+    password: mrhan777_
+    schema:
+      - classpath:flowerpot.sql
 
+
+# Mybatis Plus
+mybatis-plus:
+  global-config:
+    db-config:
+      # 逻辑删除
+      logic-delete-field: effective
+      # 删除值为 0
+      logic-delete-value: 0
+      # 未删除值为 1
+      logic-not-delete-value: 1
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
