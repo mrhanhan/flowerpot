@@ -3,6 +3,8 @@ package com.flowerpot.service.system.common.entities;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.flowerpot.common.model.BaseEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
@@ -10,7 +12,9 @@ import java.io.Serializable;
  * @author Mrhan
  * @date 2021-03-18 22:39
  */
+@EqualsAndHashCode(callSuper = true)
 @TableName("sys_dept_permission_item")
+@Data
 public class SysDeptPermissionItem extends BaseEntity implements Serializable {
 
     /**
@@ -28,8 +32,4 @@ public class SysDeptPermissionItem extends BaseEntity implements Serializable {
      */
     @TableField("relation_id")
     private Long relationId;
-    /**
-     * 是否是有效的记录 1 有效 0 无效
-     */
-    private Integer effective;
 }

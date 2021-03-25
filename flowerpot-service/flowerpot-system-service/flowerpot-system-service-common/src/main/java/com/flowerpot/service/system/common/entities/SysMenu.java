@@ -3,6 +3,8 @@ package com.flowerpot.service.system.common.entities;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.flowerpot.common.model.BaseEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
@@ -11,6 +13,8 @@ import java.io.Serializable;
  * @date 2021-03-18 22:39
  */
 @TableName("sys_menu")
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class SysMenu extends BaseEntity implements Serializable {
 
     /**
@@ -51,8 +55,4 @@ public class SysMenu extends BaseEntity implements Serializable {
      * 排序
      */
     private Integer sort;
-    /**
-     * 是否是有效的记录 1 有效 0 无效
-     */
-    private Integer effective;
 }
