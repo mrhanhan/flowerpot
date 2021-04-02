@@ -19,4 +19,30 @@ public interface SysUserService extends BaseService<SysUser> {
      * @return              返回分页查询的对象
      */
     Page<SysUserDto> getPage(Page<SysUserDto> page, SysUserDto search);
+
+    /**
+     * 保存
+     * @param sysUserDto    系统用户DTO
+     */
+    void save(SysUserDto sysUserDto);
+
+
+    /**
+     * 更改
+     * @param sysUserDto    系统用户DTO
+     */
+    void modify(SysUserDto sysUserDto);
+
+    /**
+     * 移除用户ID
+     * @param userId        用户ID
+     */
+    void remove(Long userId);
+
+    /**
+     * 查询用户详情
+     * @param userId        用户ID
+     * @return              返回用户DTO
+     */
+    SysUserDto info(Long userId);
 }

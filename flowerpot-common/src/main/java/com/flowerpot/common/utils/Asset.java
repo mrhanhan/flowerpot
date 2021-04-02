@@ -20,7 +20,7 @@ public class Asset {
      */
     public void notNull(Object object, String message) {
         if (Objects.isNull(object)) {
-            throw new cn.seraph.common.utils.AssetException(message);
+            throw new AssetException(message);
         }
     }
 
@@ -31,7 +31,7 @@ public class Asset {
      */
     public void isTrue(boolean result, String message) {
         if (!result) {
-            throw new cn.seraph.common.utils.AssetException(message);
+            throw new AssetException(message);
         }
     }
 }

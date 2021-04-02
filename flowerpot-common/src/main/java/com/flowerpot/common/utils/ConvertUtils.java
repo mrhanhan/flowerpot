@@ -24,7 +24,7 @@ public class ConvertUtils {
      * @param <T>           目录类型泛型
      * @return              返回复制后的对象
      */
-    public  <T> T copy(Object source, Class<T> targetType) {
+    public  <T> T convert(Object source, Class<T> targetType) {
         T data = BeanUtils.instantiateClass(targetType);
         BeanUtils.copyProperties(source, data);
         return data;
@@ -41,7 +41,7 @@ public class ConvertUtils {
      * @return              返回Map
      */
     public <K, T, C> Map<K, C> mapConvert(List<T> list, Class<C> targetType, Function<C, K> keyFunc) {
-        List<C> targetList = list.stream().map(t-> copy(t, targetType)).collect(Collectors.toList());
+        List<C> targetList = list.stream().map(t-> convert(t, targetType)).collect(Collectors.toList());
         return targetList.stream().collect(Collectors.toMap(keyFunc, Function.identity()));
     }
 }
