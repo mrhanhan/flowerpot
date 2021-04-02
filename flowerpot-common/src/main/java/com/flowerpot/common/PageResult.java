@@ -40,4 +40,15 @@ public class PageResult<T> extends Result<PageResult.Page<T>> {
         pageResult.setData(page);
         return pageResult;
     }
+
+    /**
+     * 创建PageResult
+     * @param page      数据库Page
+     * @param <T>       分页类型
+     * @return          返回记录信息
+     */
+    public static <T> PageResult<T> create(com.baomidou.mybatisplus.extension.plugins.pagination.Page<T> page) {
+        return create(page.getTotal(), page.getRecords());
+    }
+
 }
