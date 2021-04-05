@@ -32,8 +32,12 @@
         <flowerpot.common.version>1.0-SNAPSHOT</flowerpot.common.version>
         <flowerpot.service.version>1.0-SNAPSHOT</flowerpot.service.version>
 
+        <!-- 依赖管理 版本号 Start -->
+        <!-- 系统服务 POM -->
         <flowerpot.system.service.version>1.0-SNAPSHOT</flowerpot.system.service.version>
-
+        <!-- 邮箱服务 POM -->
+        <flowerpot.mailbox.service.version>1.0-SNAPSHOT</flowerpot.mailbox.service.version>
+        <!-- 依赖管理 版本号 End -->
 
         <springfox.version>2.9.2</springfox.version>
         <jwt.version>3.10.3</jwt.version>
@@ -63,7 +67,7 @@
                 <artifactId>flowerpot-common</artifactId>
                 <version>${flowerpot.common.version}</version>
             </dependency>
-
+            <!-- 依赖管理 Start -->
             <!-- Admin 后台模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
@@ -71,6 +75,7 @@
                 <version>${flowerpot.admin.version}</version>
                 <type>pom</type>
             </dependency>
+
             <!-- Flowerpot Service 模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
@@ -78,6 +83,7 @@
                 <version>${flowerpot.service.version}</version>
                 <type>pom</type>
             </dependency>
+
             <!-- System Service 模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
@@ -85,6 +91,17 @@
                 <version>${flowerpot.system.service.version}</version>
                 <type>pom</type>
             </dependency>
+
+            <!-- MailBox Service 邮箱模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-service</artifactId>
+                <version>${flowerpot.mailbox.service.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <!-- 依赖管理 End -->
+
 
             <!-- Spring Boot Dependencies-->
             <dependency>

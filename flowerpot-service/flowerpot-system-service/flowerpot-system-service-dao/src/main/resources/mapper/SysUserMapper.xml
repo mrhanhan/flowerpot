@@ -22,8 +22,8 @@
            su.modify_time modifyTime
         from sys_user su
         join sys_user_info sui on sui.user_id = su.id
-        left join dept d on su.dept_id = d.id
-        left join `role` r on su.role_id = r.id
+        left join sys_dept d on su.dept_id = d.id
+        left join `sys_role` r on su.role_id = r.id
         where
         su.effective = 1
     </select>

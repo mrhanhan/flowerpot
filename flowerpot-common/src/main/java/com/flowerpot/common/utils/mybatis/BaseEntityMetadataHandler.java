@@ -5,8 +5,10 @@ import com.flowerpot.common.LoginUserProvider;
 import com.flowerpot.common.enums.EffectiveEnum;
 import com.flowerpot.common.model.BaseEntity;
 import com.flowerpot.common.utils.UniqueCodeGen;
+import lombok.SneakyThrows;
 import org.apache.ibatis.reflection.MetaObject;
 
+import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.Objects;
 
@@ -43,7 +45,10 @@ public class BaseEntityMetadataHandler implements MetaObjectHandler {
     }
 
 
+    @SneakyThrows
     private void fillInsertData(BaseEntity originalObject) {
+
+        Field[] declaredFields = originalObject.getClass().getDeclaredFields();
         // 设置ID
         if (Objects.isNull(originalObject.getId())) {
             originalObject.setId(UniqueCodeGen.genId());

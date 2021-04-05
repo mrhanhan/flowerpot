@@ -40,6 +40,8 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, SysUserMapper> 
         if (Objects.isNull(sysUserDto.getId())) {
             sysUserDto.setId(UniqueCodeGen.genId());
         }
+        // 生成密码
+        // 生成头像
         // 保存User
         baseMapper.insert(createUser(sysUserDto));
         // 保存UserInfo

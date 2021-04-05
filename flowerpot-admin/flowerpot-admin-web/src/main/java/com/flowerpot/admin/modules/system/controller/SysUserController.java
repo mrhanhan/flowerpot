@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Objects;
 
 /**
  * SysUserController
@@ -46,9 +47,12 @@ public class SysUserController extends BaseController {
     public Result<SysUserDto> save(@RequestBody SysUserDto sysUserDto) {
         // 表单验证
         verifyForm(sysUserDto, true);
+        // 填充数据
+        setDefaultData(sysUserDto);
         sysUserService.save(sysUserDto);
         return Result.success(sysUserDto);
     }
+
 
     @PostMapping("/modify")
     @ApiOperation("更改")
@@ -79,5 +83,18 @@ public class SysUserController extends BaseController {
      */
     private void verifyForm(SysUserDto sysUserDto, boolean isSave) {
 
+    }
+
+    /**
+     * 设置默认数据
+     * @param sysUserDto       SysUserDto
+     */
+    private void setDefaultData(SysUserDto sysUserDto) {
+        if (Objects.isNull(sysUserDto.getDeptId())) {
+            sysUserDto.setDeptId(0L);
+        }
+        if (Objects.isNull(sysUserDto.getRoleId())) {
+            sysUserDto.setRoleId(0L);
+        }
     }
 }

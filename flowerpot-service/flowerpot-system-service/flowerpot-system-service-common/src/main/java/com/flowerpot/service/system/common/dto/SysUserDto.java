@@ -46,14 +46,6 @@ public class SysUserDto extends BaseEntity {
      */
     private String account;
     /**
-     * 密码
-     */
-    private String password;
-    /**
-     * 加盐
-     */
-    private String salt;
-    /**
      * 邮箱
      */
     private String mailbox;

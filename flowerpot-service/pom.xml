@@ -19,6 +19,7 @@
 
     <modules>
         <module>flowerpot-system-service</module>
+        <module>flowerpot-mailbox-service</module>
     </modules>
 
     <!-- 共同依赖的模块  -->
