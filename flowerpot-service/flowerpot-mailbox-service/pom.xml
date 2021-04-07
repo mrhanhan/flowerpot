@@ -16,6 +16,7 @@
         <module>flowerpot-mailbox-service-common</module>
         <module>flowerpot-mailbox-service-api</module>
         <module>flowerpot-mailbox-service-impl</module>
+        <module>flowerpot-mailbox-service-autoconfigure</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,30 +26,47 @@
         <flowerpot.mailbox.service.common.version>1.0-SNAPSHOT</flowerpot.mailbox.service.common.version>
         <flowerpot.mailbox.service.api.version>1.0-SNAPSHOT</flowerpot.mailbox.service.api.version>
         <flowerpot.mailbox.service.impl.version>1.0-SNAPSHOT</flowerpot.mailbox.service.impl.version>
+        <flowerpot.mailbox.service.autoconfigure.version>1.0-SNAPSHOT</flowerpot.mailbox.service.autoconfigure.version>
+
+        <!-- javax mail-->
+        <javax.mail.version>1.6.2</javax.mail.version>
+
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
-
+            <!-- Mailbox Common -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-mailbox-service-common</artifactId>
                 <version>${flowerpot.mailbox.service.common.version}</version>
             </dependency>
-
+            <!-- Mailbox Api -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-mailbox-service-api</artifactId>
                 <version>${flowerpot.mailbox.service.api.version}</version>
             </dependency>
-
+            <!-- Mailbox Api Impl -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-mailbox-service-impl</artifactId>
                 <version>${flowerpot.mailbox.service.impl.version}</version>
             </dependency>
+            <!-- Mailbox Auto Configuration -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-service-autoconfigure</artifactId>
+                <version>${flowerpot.mailbox.service.autoconfigure.version}</version>
+            </dependency>
 
+            <!-- JavaX Mail -->
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>${javax.mail.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

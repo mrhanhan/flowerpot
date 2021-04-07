@@ -15,15 +15,13 @@
         <module>flowerpot-admin-web</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
-    </properties>
+
 
 
     <dependencyManagement>
         <dependencies>
 
+            <!-- 系统服务 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-system-service</artifactId>
@@ -31,31 +29,15 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <!-- 邮箱服务 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-service</artifactId>
+                <version>${flowerpot.mailbox.service.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
 
-            <!-- Admin Common -->
-            <dependency>
-                <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-admin-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <!-- Admin Dao -->
-            <dependency>
-                <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-admin-dao</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <!-- Admin Api -->
-            <dependency>
-                <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-admin-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <!-- Admin Service -->
-            <dependency>
-                <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-admin-service</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <!-- Admin Web -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
