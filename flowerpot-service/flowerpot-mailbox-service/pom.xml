@@ -9,7 +9,6 @@
     </parent>
 
     <packaging>pom</packaging>
-    <version>${flowerpot.mailbox.service.version}</version>
 
     <!-- 子模块 -->
     <modules>

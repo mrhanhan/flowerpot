@@ -11,7 +11,6 @@
 
     <artifactId>flowerpot-storage-service</artifactId>
     <packaging>pom</packaging>
-    <version>${flowerpot.storage.service.version}</version>
 
     <modules>
         <module>flowerpot-storage-service-common</module>
