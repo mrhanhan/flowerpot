@@ -43,15 +43,10 @@
 #### 后端技术
 |技术名称|版本|说明|官网
 |----|----|----|-----|
-|Spring Boot    |2.3.2.RELEASE|构建服务|[https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) , [（中文）https://www.bookstack.cn](https://www.bookstack.cn/read/springboot/README.md)|
-|Spring Cloud   |Hoxton.SR6   |微服务解决方案|[https://spring.io/projects/spring-cloud/](https://spring.io/projects/spring-cloud/), [（中文）https://www.bookstack.cn](https://www.bookstack.cn/read/spring-cloud-docs/README.md)|
-|Mybatis Plus   |3.3.2        | ORM|[https://baomidou.com](https://baomidou.com/)|
-|Maven          |             | 构建项目|[http://maven.apache.org](http://maven.apache.org/)|
-
-#### 前端技术
-|技术名称|版本|说明|官网
-|----|----|----|-----|
-|Vue    |3.x.x|前端框架|[https://vue3js.cn](https://vue3js.cn/)|
+|Spring Boot    |2.3.2.RELEASE| 构建服务     |[https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) , [（中文）https://www.bookstack.cn](https://www.bookstack.cn/read/springboot/README.md)|
+|Spring Cloud   |Hoxton.SR6   | 微服务解决方案|[https://spring.io/projects/spring-cloud/](https://spring.io/projects/spring-cloud/), [（中文）https://www.bookstack.cn](https://www.bookstack.cn/read/spring-cloud-docs/README.md)|
+|Mybatis Plus   |3.3.2        | ORM        |[https://baomidou.com](https://baomidou.com/)|
+|Maven          |             | 构建项目     |[http://maven.apache.org](http://maven.apache.org/)|
 
 ### 踩坑
 1. [Maven包依赖管理](./doc/maven.md)
