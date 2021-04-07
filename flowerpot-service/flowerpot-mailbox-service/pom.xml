@@ -17,6 +17,7 @@
         <module>flowerpot-mailbox-service-api</module>
         <module>flowerpot-mailbox-service-impl</module>
         <module>flowerpot-mailbox-service-autoconfigure</module>
+        <module>flowerpot-mailbox-service-dao</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,6 +25,7 @@
 
     <properties>
         <flowerpot.mailbox.service.common.version>1.0.0</flowerpot.mailbox.service.common.version>
+        <flowerpot.mailbox.service.dao.version>1.0.0</flowerpot.mailbox.service.dao.version>
         <flowerpot.mailbox.service.api.version>1.0.0</flowerpot.mailbox.service.api.version>
         <flowerpot.mailbox.service.impl.version>1.0.0</flowerpot.mailbox.service.impl.version>
         <flowerpot.mailbox.service.autoconfigure.version>1.0.0</flowerpot.mailbox.service.autoconfigure.version>
@@ -41,6 +43,12 @@
                 <groupId>com.flowerpot</groupId>
                 <artifactId>flowerpot-mailbox-service-common</artifactId>
                 <version>${flowerpot.mailbox.service.common.version}</version>
+            </dependency>
+            <!-- Mailbox Dao -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-service-dao</artifactId>
+                <version>${flowerpot.mailbox.service.dao.version}</version>
             </dependency>
             <!-- Mailbox Api -->
             <dependency>
