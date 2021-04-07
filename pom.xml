@@ -6,7 +6,7 @@
 
     <groupId>com.flowerpot</groupId>
     <artifactId>flowerpot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>flowerpot-common</module>
         <module>flowerpot-admin</module>
@@ -27,18 +27,18 @@
 
     <properties>
 
-        <project.version>1.0-SNAPSHOT</project.version>
-        <flowerpot.admin.version>1.0-SNAPSHOT</flowerpot.admin.version>
-        <flowerpot.common.version>1.0-SNAPSHOT</flowerpot.common.version>
-        <flowerpot.service.version>1.0-SNAPSHOT</flowerpot.service.version>
+        <project.version>1.0.0</project.version>
+        <flowerpot.admin.version>1.0.0</flowerpot.admin.version>
+        <flowerpot.common.version>1.0.0</flowerpot.common.version>
+        <flowerpot.service.version>1.0.0</flowerpot.service.version>
 
         <!-- 依赖管理 版本号 Start -->
         <!-- 系统服务 POM -->
-        <flowerpot.system.service.version>1.0-SNAPSHOT</flowerpot.system.service.version>
+        <flowerpot.system.service.version>1.0.0</flowerpot.system.service.version>
         <!-- 邮箱服务 POM -->
-        <flowerpot.mailbox.service.version>1.0-SNAPSHOT</flowerpot.mailbox.service.version>
+        <flowerpot.mailbox.service.version>1.0.0</flowerpot.mailbox.service.version>
         <!-- 存储服务 POM -->
-        <flowerpot.storage.service.version>1.0-SNAPSHOT</flowerpot.storage.service.version>
+        <flowerpot.storage.service.version>1.0.0</flowerpot.storage.service.version>
         <!-- 依赖管理 版本号 End -->
 
         <springfox.version>2.9.2</springfox.version>

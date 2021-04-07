@@ -5,7 +5,7 @@
     <parent>
         <artifactId>flowerpot-service</artifactId>
         <groupId>com.flowerpot</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <packaging>pom</packaging>
@@ -23,10 +23,10 @@
     <artifactId>flowerpot-mailbox-service</artifactId>
 
     <properties>
-        <flowerpot.mailbox.service.common.version>1.0-SNAPSHOT</flowerpot.mailbox.service.common.version>
-        <flowerpot.mailbox.service.api.version>1.0-SNAPSHOT</flowerpot.mailbox.service.api.version>
-        <flowerpot.mailbox.service.impl.version>1.0-SNAPSHOT</flowerpot.mailbox.service.impl.version>
-        <flowerpot.mailbox.service.autoconfigure.version>1.0-SNAPSHOT</flowerpot.mailbox.service.autoconfigure.version>
+        <flowerpot.mailbox.service.common.version>1.0.0</flowerpot.mailbox.service.common.version>
+        <flowerpot.mailbox.service.api.version>1.0.0</flowerpot.mailbox.service.api.version>
+        <flowerpot.mailbox.service.impl.version>1.0.0</flowerpot.mailbox.service.impl.version>
+        <flowerpot.mailbox.service.autoconfigure.version>1.0.0</flowerpot.mailbox.service.autoconfigure.version>
 
         <!-- javax mail-->
         <javax.mail.version>1.6.2</javax.mail.version>
