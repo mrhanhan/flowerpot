@@ -82,7 +82,7 @@
                 <filtering>false</filtering>
             </resource>
             <resource>
-                <directory>${pom.basedir}/../../sql</directory>
+                <directory>${pom.basedir}/../../sql/flowerpot-admin-web</directory>
                 <includes>
                     <include>*.sql</include>
                 </includes>
