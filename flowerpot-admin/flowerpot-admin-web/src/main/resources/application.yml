@@ -11,7 +11,8 @@ spring:
     username: mrhan
     password: mrhan777_
     schema:
-      - classpath:flowerpot.sql
+      - classpath:flowerpot-system.sql
+      - classpath*:flowerpot-mailbox.sql
 
 
 # Mybatis Plus

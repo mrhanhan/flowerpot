@@ -12,5 +12,21 @@
     <artifactId>flowerpot-mailbox-service-api</artifactId>
 
 
+    <dependencies>
+        <!-- Mail Common -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-mailbox-service-common</artifactId>
+        </dependency>
+
+        <!-- Javax mail -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 
 </project>
