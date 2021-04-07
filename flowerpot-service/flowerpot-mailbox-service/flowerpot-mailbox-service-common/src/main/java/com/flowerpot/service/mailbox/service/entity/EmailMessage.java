@@ -18,6 +18,11 @@ import lombok.EqualsAndHashCode;
 public class EmailMessage extends BaseEntity {
 
     /**
+     * 发送邮件使用邮箱的ID
+     */
+    @TableField("mailbox_id")
+    private Long mailboxId;
+    /**
      * 邮箱类型
      */
     private Integer type;
