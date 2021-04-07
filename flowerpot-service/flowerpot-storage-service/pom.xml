@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>flowerpot-service</artifactId>
+        <groupId>com.flowerpot</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>flowerpot-storage-service</artifactId>
+    <packaging>pom</packaging>
+    <version>${flowerpot.storage.service.version}</version>
+
+    <modules>
+        <module>flowerpot-storage-service-common</module>
+        <module>flowerpot-storage-service-api</module>
+        <module>flowerpot-storage-service-impl</module>
+    </modules>
+
+    <properties>
+       <flowerpot.storage.service.common.version>1.0-SNAPSHOT</flowerpot.storage.service.common.version>
+       <flowerpot.storage.service.api.version>1.0-SNAPSHOT</flowerpot.storage.service.api.version>
+       <flowerpot.storage.service.impl.version>1.0-SNAPSHOT</flowerpot.storage.service.impl.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Storage Common -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-storage-service-common</artifactId>
+                <version>${flowerpot.storage.service.common.version}</version>
+            </dependency>
+            <!-- Storage Api -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-storage-service-api</artifactId>
+                <version>${flowerpot.storage.service.api.version}</version>
+            </dependency>
+            <!-- Storage Api Impl -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-storage-service-impl</artifactId>
+                <version>${flowerpot.storage.service.impl.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -37,6 +37,8 @@
         <flowerpot.system.service.version>1.0-SNAPSHOT</flowerpot.system.service.version>
         <!-- 邮箱服务 POM -->
         <flowerpot.mailbox.service.version>1.0-SNAPSHOT</flowerpot.mailbox.service.version>
+        <!-- 存储服务 POM -->
+        <flowerpot.storage.service.version>1.0-SNAPSHOT</flowerpot.storage.service.version>
         <!-- 依赖管理 版本号 End -->
 
         <springfox.version>2.9.2</springfox.version>
@@ -99,6 +101,15 @@
                 <version>${flowerpot.mailbox.service.version}</version>
                 <type>pom</type>
             </dependency>
+
+            <!-- Storage Service 存储服务 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-storage-service</artifactId>
+                <version>${flowerpot.storage.service.version}</version>
+                <type>pom</type>
+            </dependency>
+
 
             <!-- 依赖管理 End -->
 

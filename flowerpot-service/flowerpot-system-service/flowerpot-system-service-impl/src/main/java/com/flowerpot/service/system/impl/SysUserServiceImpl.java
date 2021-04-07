@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.flowerpot.common.model.BaseServiceImpl;
 import com.flowerpot.common.utils.ConvertUtils;
 import com.flowerpot.common.utils.UniqueCodeGen;
+import com.flowerpot.common.utils.text.PasswordUtils;
 import com.flowerpot.service.system.api.SysUserInfoService;
 import com.flowerpot.service.system.api.SysUserService;
 import com.flowerpot.service.system.common.dto.SysUserDto;
@@ -40,10 +41,13 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, SysUserMapper> 
         if (Objects.isNull(sysUserDto.getId())) {
             sysUserDto.setId(UniqueCodeGen.genId());
         }
+        SysUser user = createUser(sysUserDto);
         // 生成密码
+        generatorPassword(user);
         // 生成头像
+        generatorImage(user);
         // 保存User
-        baseMapper.insert(createUser(sysUserDto));
+        baseMapper.insert(user);
         // 保存UserInfo
         sysUserInfoService.save(createUserInfo(sysUserDto));
     }
@@ -75,6 +79,28 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, SysUserMapper> 
         return userDto;
     }
 
+    // ============================================================== private methods ==============================================================
+
+    /**
+     * 生成头像
+     * @param user      用户信息
+     */
+    private void generatorImage(SysUser user) {
+
+    }
+
+    /**
+     * 生成密码
+     * @param user      需要生成密码的用户
+     */
+    private void generatorPassword(SysUser user) {
+        String password = PasswordUtils.generatorPassword();
+        String slat = PasswordUtils.generatorSalt();
+        String encryptPassword = PasswordUtils.encrypt(password, slat);
+
+        user.setSalt(slat);
+        user.setPassword(encryptPassword);
+    }
 
     /**
      * 保存用户信息
