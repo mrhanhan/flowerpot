@@ -18,6 +18,12 @@
             <artifactId>flowerpot-mailbox-service-api</artifactId>
         </dependency>
 
+        <!-- Mailbox Dao -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-mailbox-service-dao</artifactId>
+        </dependency>
+
         <!-- Javax mail -->
         <dependency>
             <groupId>com.sun.mail</groupId>
