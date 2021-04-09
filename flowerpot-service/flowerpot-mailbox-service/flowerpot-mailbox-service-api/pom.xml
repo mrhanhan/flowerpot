@@ -19,10 +19,9 @@
             <artifactId>flowerpot-mailbox-service-common</artifactId>
         </dependency>
 
-        <!-- Javax mail -->
         <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>javax.mail</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>

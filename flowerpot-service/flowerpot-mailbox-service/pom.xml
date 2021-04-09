@@ -31,6 +31,7 @@
 
         <!-- javax mail-->
         <javax.mail.version>1.6.2</javax.mail.version>
+        <spring.boot.mail.version>2.1.7.RELEASE</spring.boot.mail.version>
 
     </properties>
 
@@ -69,10 +70,16 @@
             </dependency>
 
             <!-- JavaX Mail -->
+<!--            <dependency>-->
+<!--                <groupId>com.sun.mail</groupId>-->
+<!--                <artifactId>javax.mail</artifactId>-->
+<!--                <version>${javax.mail.version}</version>-->
+<!--            </dependency>-->
+<!--            -->
             <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>${javax.mail.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${spring.boot.mail.version}</version>
             </dependency>
 
         </dependencies>

@@ -13,7 +13,16 @@
 
 
     <dependencies>
-
+        <!-- Spring Boot Mail -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!-- Mailbox Impl -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-mailbox-service-impl</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

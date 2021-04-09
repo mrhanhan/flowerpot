@@ -46,13 +46,13 @@ create table if not exists `mb_email_message_content`
 ) comment '邮件消息表';
 
 /**
-  邮箱配置, 系统固定的数据，用户只可以修改，不可以增删改
+  邮件邮箱, 系统固定的数据，用户只可以修改，不可以增删改
  */
 -- drop table if exists `mb_mailbox_setting`;
-create table if not exists `mb_mailbox`
+create table if not exists `mb_email_mailbox`
 (
     `id`            bigint(20) primary key comment '邮箱ID',
-    `code`          varchar(128) not null comment '配置Code MailboxEnum',
+    `code`          varchar(128) not null comment '配置Code EmailMailboxEnum',
     `name`          varchar(32)  not null comment '邮箱名称',
     `account`       varchar(32)  not null comment '邮箱账号',
     `password`      varchar(255) not null comment '邮箱密码',
@@ -65,4 +65,4 @@ create table if not exists `mb_mailbox`
     `modify_time`   datetime              default current_timestamp comment '修改时间',
     `modify_by`     bigint                default 0 comment '修改人',
     `effective`     tinyint      not null default 1 comment '是否是有效的记录 1 有效 0 无效'
-) comment '邮箱配置, 系统固定的数据，用户只可以修改，不可以增删改';
+) comment '邮件邮箱, 系统固定的数据，用户只可以修改，不可以增删改';

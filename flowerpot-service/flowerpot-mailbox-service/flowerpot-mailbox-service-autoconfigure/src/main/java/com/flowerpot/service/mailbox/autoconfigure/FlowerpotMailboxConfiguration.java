@@ -1,6 +1,8 @@
 package com.flowerpot.service.mailbox.autoconfigure;
 
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import com.flowerpot.service.mailbox.provider.EmailMessageSenderProvider;
+import com.flowerpot.service.mailbox.provider.impl.EmailMessageSenderProviderImpl;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,10 +12,14 @@ import org.springframework.context.annotation.Configuration;
  * @date 2021/4/7 10:53
  */
 @Configuration
-@EnableConfigurationProperties(FlowerpotMailboxProperties.class)
 public class FlowerpotMailboxConfiguration {
 
     public FlowerpotMailboxConfiguration() {
         System.out.println("mailbox");
+    }
+
+    @Bean
+    public EmailMessageSenderProvider messageSenderProvider() {
+        return new EmailMessageSenderProviderImpl();
     }
 }
