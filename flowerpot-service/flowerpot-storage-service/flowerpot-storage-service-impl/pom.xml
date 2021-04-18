@@ -11,6 +11,17 @@
 
     <artifactId>flowerpot-storage-service-impl</artifactId>
 
-
+    <dependencies>
+        <!-- Storage Api -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-storage-service-api</artifactId>
+        </dependency>
+        <!-- Storage Dao -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-storage-service-dao</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

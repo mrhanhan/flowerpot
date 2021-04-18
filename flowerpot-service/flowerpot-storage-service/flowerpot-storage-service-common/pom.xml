@@ -12,5 +12,9 @@
     <artifactId>flowerpot-storage-service-common</artifactId>
 
 
+    <dependencies>
+        <!-- AliUun Oss -->
+
+    </dependencies>
 
 </project>

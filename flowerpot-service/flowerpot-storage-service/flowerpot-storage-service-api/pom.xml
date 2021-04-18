@@ -12,5 +12,15 @@
     <artifactId>flowerpot-storage-service-api</artifactId>
 
 
+    <dependencies>
+
+        <!-- Storage Common -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-storage-service-common</artifactId>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

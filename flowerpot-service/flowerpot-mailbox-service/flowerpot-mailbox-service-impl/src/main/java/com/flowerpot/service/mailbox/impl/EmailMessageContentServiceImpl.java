@@ -1,9 +1,9 @@
 package com.flowerpot.service.mailbox.impl;
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.mailbox.mapper.EmailMessageContentMapper;
-import com.flowerpot.service.mailbox.service.EmailMessageContentService;
-import com.flowerpot.service.mailbox.service.entity.EmailMessageContent;
+import com.flowerpot.service.mailbox.dao.EmailMessageContentMapper;
+import com.flowerpot.service.storage.service.EmailMessageContentService;
+import com.flowerpot.service.storage.service.entity.EmailMessageContent;
 import org.springframework.stereotype.Service;
 
 /**

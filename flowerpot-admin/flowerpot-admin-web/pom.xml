@@ -31,6 +31,11 @@
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-mailbox-service-autoconfigure</artifactId>
         </dependency>
+        <!-- 存储服务 -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-storage-service-autoconfigure</artifactId>
+        </dependency>
         <!-- Spring Boot Starter Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

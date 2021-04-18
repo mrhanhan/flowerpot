@@ -13,6 +13,7 @@ spring:
     schema:
       - classpath:flowerpot-system.sql
       - classpath*:flowerpot-mailbox.sql
+      - classpath*:flowerpot-storage.sql
     initialization-mode: always # 打开这个才会执行上面所创建的SQL
 
 
