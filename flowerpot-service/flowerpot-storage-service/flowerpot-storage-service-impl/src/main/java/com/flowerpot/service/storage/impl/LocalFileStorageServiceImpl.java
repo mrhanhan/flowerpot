@@ -3,7 +3,7 @@ package com.flowerpot.service.storage.impl;
 import com.flowerpot.common.utils.IoUtils;
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;
-import com.flowerpot.service.mailbox.service.StorageService;
+import com.flowerpot.service.storage.service.StorageService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 

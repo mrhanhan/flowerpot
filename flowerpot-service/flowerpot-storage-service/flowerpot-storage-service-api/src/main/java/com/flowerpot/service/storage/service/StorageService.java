@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.service;
+package com.flowerpot.service.storage.service;
 
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;

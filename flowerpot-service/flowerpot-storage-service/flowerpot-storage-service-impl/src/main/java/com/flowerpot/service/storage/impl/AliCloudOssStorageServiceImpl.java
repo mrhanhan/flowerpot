@@ -7,7 +7,7 @@ import com.aliyun.oss.model.PutObjectRequest;
 import com.flowerpot.service.storage.constant.MetadataConstant;
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;
-import com.flowerpot.service.mailbox.service.StorageService;
+import com.flowerpot.service.storage.service.StorageService;
 import lombok.RequiredArgsConstructor;
 
 import java.io.InputStream;
