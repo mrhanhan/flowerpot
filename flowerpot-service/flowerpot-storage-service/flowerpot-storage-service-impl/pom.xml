@@ -22,6 +22,11 @@
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-storage-service-dao</artifactId>
         </dependency>
+        <!-- Ali yun Oss -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

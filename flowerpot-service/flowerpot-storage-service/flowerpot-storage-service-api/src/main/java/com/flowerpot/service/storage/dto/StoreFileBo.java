@@ -52,4 +52,12 @@ public class StoreFileBo {
      * RelationId
      */
     private Long relationId;
+    /**
+     * 保存目录
+     */
+    private String path;
+    /**
+     * ContentType
+     */
+    private String contentType;
 }

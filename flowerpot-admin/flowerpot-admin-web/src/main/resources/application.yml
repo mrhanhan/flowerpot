@@ -6,7 +6,7 @@ spring:
 
   # 数据源
   datasource:
-    url: jdbc:mysql://192.168.198.136:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://server.mrhan.local:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: mrhan
     password: mrhan777_

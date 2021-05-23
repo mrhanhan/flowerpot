@@ -26,3 +26,4 @@ public class StoreFileResultDto {
      */
     public Supplier<InputStream> sourceSupplier;
 }
+
