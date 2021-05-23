@@ -60,4 +60,8 @@ public class StoreFileBo {
      * ContentType
      */
     private String contentType;
+
+    public String getDevicePath() {
+        return path + saveName;
+    }
 }

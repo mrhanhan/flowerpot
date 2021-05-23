@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.service;
+package com.flowerpot.service.mailbox.service;
 
 import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
 

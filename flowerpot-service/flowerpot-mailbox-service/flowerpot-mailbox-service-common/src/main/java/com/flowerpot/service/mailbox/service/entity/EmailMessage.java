@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.service.entity;
+package com.flowerpot.service.mailbox.service.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;

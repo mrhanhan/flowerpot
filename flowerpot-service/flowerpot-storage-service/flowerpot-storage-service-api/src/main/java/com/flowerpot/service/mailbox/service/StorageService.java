@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.service;
+package com.flowerpot.service.mailbox.service;
 
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;
@@ -7,7 +7,7 @@ import java.io.InputStream;
 
 /**
  * StorageService
- * 存储服务
+ * 存储服务，主要提供保存、读取、删除得功能。
  * @author Mrhan
  * @date 2021/4/19 9:32
  */
@@ -28,5 +28,17 @@ public interface StorageService {
      */
     InputStream read(String devicePath);
 
+    /**
+     * 删除文件
+     * @param devicePath    设备上保存文件的Path
+     * @return              是否删除成功
+     */
+    boolean remove(String devicePath);
 
+    /**
+     * 是否存在文件
+     * @param devicePath    设备上保存文件的Path
+     * @return              是否存在设备中
+     */
+    boolean exists(String devicePath);
 }

@@ -1,7 +1,7 @@
 package com.flowerpot.service.mailbox.dao;
 
 import com.flowerpot.common.model.BaseMapper;
-import com.flowerpot.service.storage.service.entity.EmailMessage;
+import com.flowerpot.service.mailbox.service.entity.EmailMessage;
 
 /**
  * EmailMessageMapper

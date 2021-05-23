@@ -25,5 +25,14 @@ public class StoreFileResultDto {
      * 数据源供应商
      */
     public Supplier<InputStream> sourceSupplier;
+
+    public StoreFileResultDto() {
+    }
+
+    public StoreFileResultDto(StoreFileBo storeFile, String accessUrl, Supplier<InputStream> sourceSupplier) {
+        this.storeFile = storeFile;
+        this.accessUrl = accessUrl;
+        this.sourceSupplier = sourceSupplier;
+    }
 }
 

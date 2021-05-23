@@ -1,7 +1,7 @@
 package com.flowerpot.service.mailbox.provider.impl;
 
 import com.flowerpot.service.mailbox.provider.EmailMessageSenderProvider;
-import com.flowerpot.service.storage.service.entity.EmailMailbox;
+import com.flowerpot.service.mailbox.service.entity.EmailMailbox;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.mail.MailSender;

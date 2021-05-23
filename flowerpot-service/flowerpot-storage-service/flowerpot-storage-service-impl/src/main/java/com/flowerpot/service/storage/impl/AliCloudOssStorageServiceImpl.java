@@ -7,7 +7,7 @@ import com.aliyun.oss.model.PutObjectRequest;
 import com.flowerpot.service.storage.constant.MetadataConstant;
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;
-import com.flowerpot.service.storage.service.StorageService;
+import com.flowerpot.service.mailbox.service.StorageService;
 import lombok.RequiredArgsConstructor;
 
 import java.io.InputStream;
@@ -33,9 +33,10 @@ public class AliCloudOssStorageServiceImpl implements StorageService {
     @Override
     public StoreFileResultDto save(StoreFileBo store) {
         ObjectMetadata metadata = createSaveObjectMetadata(store);
-        PutObjectRequest request = new PutObjectRequest(bucketName, store.getPath(), store.getSource(), metadata);
+        PutObjectRequest request = new PutObjectRequest(bucketName, store.getDevicePath(), store.getSource(), metadata);
         client.putObject(request);
-        return null;
+        // 访问URL
+        return new StoreFileResultDto(store, store.getDevicePath(), store::getSource);
     }
 
     @Override
@@ -44,6 +45,16 @@ public class AliCloudOssStorageServiceImpl implements StorageService {
         return object.getObjectContent();
     }
 
+    @Override
+    public boolean remove(String devicePath) {
+        client.deleteObject(bucketName, devicePath);
+        return true;
+    }
+
+    @Override
+    public boolean exists(String devicePath) {
+        return client.doesObjectExist(bucketName, devicePath);
+    }
 
     /**
      * 创建保存的文件名称 元数据
