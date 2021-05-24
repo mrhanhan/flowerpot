@@ -41,4 +41,10 @@ public interface StorageService {
      * @return              是否存在设备中
      */
     boolean exists(String devicePath);
+
+    /**
+     * 服务是否是可用的状态
+     * @return  服务是否可用
+     */
+    boolean isAvailable();
 }

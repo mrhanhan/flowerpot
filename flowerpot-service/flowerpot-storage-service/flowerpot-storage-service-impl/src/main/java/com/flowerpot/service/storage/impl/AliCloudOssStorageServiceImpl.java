@@ -19,7 +19,7 @@ import java.io.InputStream;
  * @date 2021/4/19 17:11
  */
 @RequiredArgsConstructor
-public class AliCloudOssStorageServiceImpl implements StorageService {
+public class AliCloudOssStorageServiceImpl extends AbstractStorageServiceImpl implements StorageService {
 
     private static final String BIZ_TYPE_FIELD_NAME = "business-type";
     private static final String BIZ_ID_FIELD_NAME = "business-id";

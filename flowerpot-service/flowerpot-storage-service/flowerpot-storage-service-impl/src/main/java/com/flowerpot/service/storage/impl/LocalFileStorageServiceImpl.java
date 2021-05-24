@@ -19,7 +19,7 @@ import java.io.InputStream;
  * @date 2021/5/23 12:59
  */
 @RequiredArgsConstructor
-public class LocalFileStorageServiceImpl implements StorageService {
+public class LocalFileStorageServiceImpl extends AbstractStorageServiceImpl implements StorageService {
     /**
      * BathPath
      */

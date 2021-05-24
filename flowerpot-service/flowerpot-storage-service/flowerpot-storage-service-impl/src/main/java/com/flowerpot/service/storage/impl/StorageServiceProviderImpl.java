@@ -3,7 +3,7 @@ package com.flowerpot.service.storage.impl;
 import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
 import com.flowerpot.service.storage.service.StorageService;
 import com.flowerpot.service.storage.service.StorageServiceProvider;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class StorageServiceProviderImpl implements StorageServiceProvider {
 
     @Resource
-    private ApplicationContext context;
+    private ConfigurableApplicationContext context;
 
     @Override
     public boolean validateStoreDeviceSupplier(StoreDeviceSupplierEnum storeDeviceSupplierEnum) {
@@ -29,6 +29,7 @@ public class StorageServiceProviderImpl implements StorageServiceProvider {
     public StorageService apply(StoreDeviceSupplierEnum storeDeviceSupplierEnum) {
         switch (storeDeviceSupplierEnum) {
             case LOCAL_STORAGE:
+
                 return context.getBean(LocalFileStorageServiceImpl.class);
             case ALI_CLOUD_OSS_STORAGE:
                 return context.getBean(AliCloudOssStorageServiceImpl.class);
