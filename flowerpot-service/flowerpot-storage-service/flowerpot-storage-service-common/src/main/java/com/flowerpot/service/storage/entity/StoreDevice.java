@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class StoreDevice extends BaseEntity implements Serializable{
 
     /**
-     * 配置Code StoreDeviceEnum
+     * 配置Code 
      */
     private String code;
     /**

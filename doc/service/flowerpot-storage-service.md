@@ -15,3 +15,11 @@
 
 ### 执行流程
 ![](../images/flowerpot-storage-call.png)
+
+### 存储设备/存储设备供应商
+    
+    存储设备： 存储的容器，例如: 阿里云OSS 北京、阿里云OSS 上海、本地存储
+    存储设备供应商: 阿里云，本地存储，腾讯云
+
+### 数据存储执行流程
+![](../images/flowerpot-storage-data-process.png)
