@@ -11,11 +11,10 @@ import org.springframework.context.annotation.Configuration;
  * @author Mrhan
  * @date 2021/4/7 10:53
  */
-@Configuration
 public class FlowerpotMailboxConfiguration {
 
     public FlowerpotMailboxConfiguration() {
-        System.out.println("mailbox");
+
     }
 
     @Bean
