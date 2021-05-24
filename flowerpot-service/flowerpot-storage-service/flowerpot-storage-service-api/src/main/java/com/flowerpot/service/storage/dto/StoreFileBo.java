@@ -1,7 +1,6 @@
 package com.flowerpot.service.storage.dto;
 
 import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
-import com.flowerpot.service.storage.enums.StoreFileRelationType;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -45,14 +44,6 @@ public class StoreFileBo {
      */
     private StoreDeviceSupplierEnum deviceEnum;
     /**
-     * 存储关联类型
-     */
-    private StoreFileRelationType relationType;
-    /**
-     * RelationId
-     */
-    private Long relationId;
-    /**
      * 保存目录
      */
     private String path;
@@ -60,8 +51,8 @@ public class StoreFileBo {
      * ContentType
      */
     private String contentType;
-
-    public String getDevicePath() {
-        return path + saveName;
-    }
+    /**
+     * 设备路径
+     */
+    private String devicePath;
 }

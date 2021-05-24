@@ -36,7 +36,7 @@ public class AliCloudOssStorageServiceImpl implements StorageService {
         PutObjectRequest request = new PutObjectRequest(bucketName, store.getDevicePath(), store.getSource(), metadata);
         client.putObject(request);
         // 访问URL
-        return new StoreFileResultDto(store, store.getDevicePath(), store::getSource);
+        return new StoreFileResultDto(store, store.getDevicePath());
     }
 
     @Override
@@ -65,8 +65,6 @@ public class AliCloudOssStorageServiceImpl implements StorageService {
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentType(store.getContentType());
         metadata.setContentLength(store.getSize());
-        metadata.addUserMetadata(BIZ_TYPE_FIELD_NAME, store.getRelationType().toString());
-        metadata.addUserMetadata(BIZ_ID_FIELD_NAME, store.getRelationId().toString());
         metadata.addUserMetadata(MetadataConstant.FILE_ORIGIN_NAME_FILED, store.getFullName());
         metadata.addUserMetadata(MetadataConstant.FILE_SUFFIX_NAME_FILED, store.getSuffix());
         metadata.addUserMetadata(MetadataConstant.FILE_NAME_NAME_FILED, store.getName());

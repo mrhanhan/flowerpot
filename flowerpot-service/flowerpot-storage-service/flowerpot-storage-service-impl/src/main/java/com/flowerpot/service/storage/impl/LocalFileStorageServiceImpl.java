@@ -33,7 +33,7 @@ public class LocalFileStorageServiceImpl implements StorageService {
         IoUtils.writeTo(store.getSource(), outputStream);
         outputStream.flush();
         outputStream.close();
-        return new StoreFileResultDto(store, store.getDevicePath(), store::getSource);
+        return new StoreFileResultDto(store, store.getDevicePath());
     }
 
     @SneakyThrows

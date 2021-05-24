@@ -1,9 +1,8 @@
 package com.flowerpot.service.storage.dto;
 
+import com.flowerpot.service.storage.entity.StoreFile;
+import com.flowerpot.service.storage.utils.StoreFileFactory;
 import lombok.Data;
-
-import java.io.InputStream;
-import java.util.function.Supplier;
 
 /**
  * StoreFileResultBo
@@ -22,17 +21,23 @@ public class StoreFileResultDto {
      */
     private String accessUrl;
     /**
+     * 保存后的设备路径
+     */
+    private String devicePath;
+
+    /**
      * 数据源供应商
      */
-    public Supplier<InputStream> sourceSupplier;
+    public StoreFile file;
 
     public StoreFileResultDto() {
     }
 
-    public StoreFileResultDto(StoreFileBo storeFile, String accessUrl, Supplier<InputStream> sourceSupplier) {
+    public StoreFileResultDto(StoreFileBo storeFile, String accessUrl) {
         this.storeFile = storeFile;
         this.accessUrl = accessUrl;
-        this.sourceSupplier = sourceSupplier;
+        this.file = StoreFileFactory.of(storeFile);
+        this.file.setAccessUrl(accessUrl);
     }
 }
 

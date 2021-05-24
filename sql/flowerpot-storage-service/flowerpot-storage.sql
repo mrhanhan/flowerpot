@@ -30,7 +30,7 @@ create table if not exists `st_store_file`
     `relation_type` int          not null comment '关联的类型 StoreFileRelationTypeEnum',
     `name`          varchar(255) not null comment '文件名称， 不包含后缀名',
     `suffix`        varchar(32)  not null comment '文件后缀名',
-    `size`          int          not null comment '文件大小',
+    `size`          bigint(20)          not null comment '文件大小',
     `device_path`   varchar(255) not null comment '文件在设备上存储的位置',
     `access_url`    varchar(255) null comment '访问URL',
     `create_time`   datetime     not null default current_timestamp comment '创建时间',

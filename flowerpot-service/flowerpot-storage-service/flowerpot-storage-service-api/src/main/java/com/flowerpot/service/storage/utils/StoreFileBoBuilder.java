@@ -2,8 +2,11 @@ package com.flowerpot.service.storage.utils;
 
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
+import lombok.SneakyThrows;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 /**
  * StoreFileBoFactory
@@ -33,6 +36,7 @@ public class StoreFileBoBuilder {
     public StoreFileBoBuilder() {
         storeFileBo = new StoreFileBo();
     }
+
     public StoreFileBo build() {
         return storeFileBo;
     }
@@ -42,8 +46,34 @@ public class StoreFileBoBuilder {
      * @param file  文件
      * @return      文件类型
      */
+    @SneakyThrows
     public StoreFileBoBuilder file(File file) {
         String fullName = file.getName();
+        storeFileBo.setSource(new FileInputStream(file));
+        storeFileBo.setSize(file.length());;
+        return fileName(fullName);
+    }
+
+    /**
+     * Source
+     * @param source    数据源
+     * @param fillName  文件名称
+     * @param size      文件大小
+     * @return          StoreFileBoBuilder
+     */
+    public StoreFileBoBuilder source(InputStream source, String fillName, long size) {
+        storeFileBo.setSource(source);
+        storeFileBo.setSize(size);;
+        return fileName(fillName);
+    }
+
+
+    /**
+     * 设置文件全名称
+     * @param fullName  fullName
+     * @return          StoreFileBoBuilder
+     */
+    public StoreFileBoBuilder fileName(String fullName) {
         String[] fullNameSegment = fullName.split("\\.");
         storeFileBo.setFullName(fullName);
         storeFileBo.setSuffix(fullNameSegment.length > 1 ? ("." + fullNameSegment[1]) : "");
@@ -52,4 +82,16 @@ public class StoreFileBoBuilder {
     }
 
 
+    /**
+     * 保存
+     * @param dir   目录
+     * @param name  名称
+     * @return  StoreFileBoBuilder
+     */
+    public StoreFileBoBuilder save(String dir, String name) {
+        storeFileBo.setPath(dir);
+        storeFileBo.setSaveName(name + "." + storeFileBo.getSuffix());
+        storeFileBo.setDevicePath((dir + "/" + storeFileBo.getSaveName()).replaceAll("//", "/"));
+        return this;
+    }
 }

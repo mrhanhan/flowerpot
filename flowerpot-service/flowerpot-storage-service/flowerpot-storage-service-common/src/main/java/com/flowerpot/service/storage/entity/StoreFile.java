@@ -43,7 +43,7 @@ public class StoreFile extends BaseEntity implements Serializable{
     /**
      * 文件大小
      */
-    private Integer size;
+    private Long size;
     /**
      * 文件在设备上存储的位置
      */
