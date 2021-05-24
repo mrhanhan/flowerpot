@@ -13,11 +13,13 @@
     3. 客户端得到文件数据存储服务响应的数据后，会携带数据提交到具体的业务服务接口中，在具体的业务服务中调用文件信息服务进行保存文件信息
 
 
-```mermaid
+```plantuml
+      @startuml
+       Alice -> Bob: Authentication Request
+       Bob --> Alice: Authentication Response
 
-graph LR
-     id1(Start)-->id2(Stop)
-     style id1 fill:#f9f,stroke:#333,stroke-width:4px;
-     style id2 fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray:5,5;
+       Alice -> Bob: Another authentication Request
+       Alice <-- Bob: another authentication Response
+       @enduml
 
 ```
