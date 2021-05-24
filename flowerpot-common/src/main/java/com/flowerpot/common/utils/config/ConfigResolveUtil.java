@@ -45,6 +45,10 @@ public class ConfigResolveUtil {
         EXCLUDE_METHOD_NAME_SET.add("wait");
         EXCLUDE_METHOD_NAME_SET.add("notify");
         EXCLUDE_METHOD_NAME_SET.add("notifyAll");
+        // 重复的内容
+        EXCLUDE_METHOD_NAME_SET.add("options");
+        EXCLUDE_METHOD_NAME_SET.add("props");
+
     }
 
     /**

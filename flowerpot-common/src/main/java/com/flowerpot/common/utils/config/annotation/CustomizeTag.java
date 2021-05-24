@@ -31,7 +31,7 @@ public @interface CustomizeTag {
      * 是否是必填
      * @return  是否是必填
      */
-    boolean required();
+    boolean required() default false;
 
     /**
      * 自定义标签的属性

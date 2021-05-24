@@ -3,9 +3,11 @@ package com.flowerpot.common.utils.config.model;
 import com.flowerpot.common.utils.config.ConfigTemplate;
 import com.flowerpot.common.utils.config.annotation.Checkbox;
 import com.flowerpot.common.utils.config.annotation.CheckboxGroup;
+import com.flowerpot.common.utils.config.annotation.CustomizeTag;
 import com.flowerpot.common.utils.config.annotation.Input;
 import com.flowerpot.common.utils.config.annotation.Switch;
 import com.flowerpot.common.utils.config.annotation.Table;
+import com.flowerpot.common.utils.config.annotation.Textarea;
 import lombok.Data;
 
 import java.util.List;
@@ -41,6 +43,13 @@ public class AppConfig implements ConfigTemplate {
      * JDBC 默认配置
      */
     public JDBCConfig defaultJdbc;
+
+
+    @CustomizeTag(tag = "DeptTreeSelect", label = "默认部门")
+    private Long deptId;
+
+    @Textarea(label = "系统描述")
+    private String remark;
 
     @Data
     public static class JDBCConfig implements ConfigTemplate{
