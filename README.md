@@ -48,6 +48,7 @@
 |Mybatis Plus   |3.3.2        | ORM        |[https://baomidou.com](https://baomidou.com/)|
 |Maven          |             | 构建项目     |[http://maven.apache.org](http://maven.apache.org/)|
 
-### 踩坑
+### 文档
 1. [Maven包依赖管理](./doc/maven.md)
+2. [存储服务说明](./doc/service/flowerpot-storage-service.md)
  
