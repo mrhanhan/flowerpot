@@ -11,7 +11,7 @@ participant "数据存储服务" as D
 
 U -> B: 选择文件进行上传
 B -> I: 提交文件数据
-I -> S: 根据配置或者根据业务\n构建StoreFileBon\n包含需要存储的设备 StoreDevice
+I -> S: 根据配置或者根据业务,构建StoreFileBo。包含需要存储的设备 StoreDevice
 S -> I: 根据存储设备ID查找此设备配置和供应商类型\n构建此供应商类型的存储服务对象，设置配置数据\n返回构建的存储服务
 I -> D: 执行存储服务的保存方法
 D -> I: 返回执行完的结果
