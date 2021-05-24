@@ -3,10 +3,11 @@ package com.flowerpot.common.utils.config;
 import com.flowerpot.common.utils.config.annotation.Checkbox;
 import com.flowerpot.common.utils.config.annotation.CheckboxGroup;
 import com.flowerpot.common.utils.config.annotation.Config;
+import com.flowerpot.common.utils.config.annotation.Prop;
 import com.flowerpot.common.utils.config.annotation.Radio;
 import com.flowerpot.common.utils.config.annotation.RadioGroup;
 import com.flowerpot.common.utils.config.annotation.Table;
-import com.flowerpot.common.utils.config.annotation.VueComponent;
+import com.flowerpot.common.utils.config.annotation.CustomizeTag;
 import com.flowerpot.common.utils.config.model.ConfigField;
 import com.flowerpot.common.utils.config.model.KeyValue;
 import lombok.SneakyThrows;
@@ -119,8 +120,12 @@ public class ConfigResolveUtil {
         } else if (configAnnotation instanceof RadioGroup) {
             Radio[] options = ((RadioGroup) configAnnotation).options();
             configField.getAttrMap().put("values", Stream.of(options).map(t -> new KeyValue(t.label(), t.value())).collect(Collectors.toList()));
-        } else if (configAnnotation instanceof VueComponent) {
-            configField.setTag(((VueComponent) configAnnotation).tag());
+        } else if (configAnnotation instanceof CustomizeTag) {
+            configField.setTag(((CustomizeTag) configAnnotation).tag());
+            Prop[] props = ((CustomizeTag) configAnnotation).props();
+            for (Prop prop : props) {
+                configField.getAttrMap().put(prop.name(), prop.value());
+            }
         }
         // 配置属性
         Method[] methods = configAnnotation.annotationType().getMethods();
