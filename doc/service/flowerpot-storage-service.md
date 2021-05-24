@@ -1,3 +1,4 @@
+[menu]
 # 存储服务
     存储服务、用于保存文件信息。存储文件的数据和存储的文件信息是分开独立的
 
@@ -12,14 +13,5 @@
     2. 客户端调用文件数据存储服务。文件数据存储存储服存储完之后，会返回一些基础的文件信息数据对象 StoreFileResultDto
     3. 客户端得到文件数据存储服务响应的数据后，会携带数据提交到具体的业务服务接口中，在具体的业务服务中调用文件信息服务进行保存文件信息
 
-
-```plantuml
-      @startuml
-       Alice -> Bob: Authentication Request
-       Bob --> Alice: Authentication Response
-
-       Alice -> Bob: Another authentication Request
-       Alice <-- Bob: another authentication Response
-       @enduml
-
-```
+### 执行流程
+![](../images/flowerpot-storage-call.png)

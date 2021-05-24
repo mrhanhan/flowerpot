@@ -1,0 +1,22 @@
+@startuml
+
+autonumber
+actor	"用户" as U
+participant "浏览器" as B
+participant "数据存储服务" as D
+participant "具体业务" as A
+participant "信息存储服务" as I
+
+== 存储数据阶段 ==
+U -> B: 选择文件
+B -> D: 调用数据存储服务存储数据
+D -> B: 数据存储服务返回文件信息对象
+
+== 业务提交阶段 ==
+U -> B: 提交业务
+B -> A: 携带文件信息对象和业务数据发送给具体业务
+A -> I: 具体业务设置关联的ID和其他信息存储信息
+A -> B: 业务执行完成
+B -> U: 反馈给用户
+
+@enduml
