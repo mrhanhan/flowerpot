@@ -1,8 +1,11 @@
 package com.flowerpot.common.utils;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import lombok.experimental.UtilityClass;
 import org.springframework.beans.BeanUtils;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -15,7 +18,7 @@ import java.util.stream.Collectors;
  * @date 2021/3/23 17:38
  */
 @UtilityClass
-public class ConvertUtils {
+public class ConvertUtil {
 
     /**
      * 创建新的并且创建对象
@@ -44,4 +47,25 @@ public class ConvertUtils {
         List<C> targetList = list.stream().map(t-> convert(t, targetType)).collect(Collectors.toList());
         return targetList.stream().collect(Collectors.toMap(keyFunc, Function.identity()));
     }
+    /**
+     * JSON字符串转换为具体对象
+     * @param json          JSON 字符串
+     * @param targetType    目标类型
+     * @param <T>           目录类型泛型
+     * @return              返回复制后的对象
+     */
+    public <T> T jsonConvert(String json, Class<T> targetType) {
+        return JSONObject.toJavaObject(JSON.parseObject(json), targetType);
+    }
+    /**
+     * JSON字符串转换为具体对象
+     * @param json          JSON 字符串
+     * @param targetType    目标类型
+     * @param <T>           目录类型泛型
+     * @return              返回复制后的对象
+     */
+    public <T> T jsonConvert(String json, Type targetType) {
+        return JSON.parseObject(json).toJavaObject(targetType);
+    }
+
 }

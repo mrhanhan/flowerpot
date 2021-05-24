@@ -3,7 +3,7 @@ package com.flowerpot.service.system.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.common.utils.ConvertUtils;
+import com.flowerpot.common.utils.ConvertUtil;
 import com.flowerpot.common.utils.UniqueCodeGen;
 import com.flowerpot.common.utils.text.PasswordUtils;
 import com.flowerpot.service.system.api.SysUserInfoService;
@@ -70,7 +70,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, SysUserMapper> 
 
     @Override
     public SysUserDto info(Long userId) {
-        SysUserDto userDto = ConvertUtils.convert(getById(userId), SysUserDto.class);
+        SysUserDto userDto = ConvertUtil.convert(getById(userId), SysUserDto.class);
         // 查询用户详情
         SysUserInfo userInfo = sysUserInfoService.getByUserId(userId);
         userDto.setAvatar(userInfo.getAvatar());
@@ -108,7 +108,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, SysUserMapper> 
      * @return                  用户信息DTO
      */
     private SysUser createUser(SysUserDto sysUserDto) {
-        return ConvertUtils.convert(sysUserDto, SysUser.class);
+        return ConvertUtil.convert(sysUserDto, SysUser.class);
     }
     /**
      * 保存用户信息
@@ -116,7 +116,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, SysUserMapper> 
      * @return                  用户信息DTO
      */
     private SysUserInfo createUserInfo(SysUserDto sysUserDto) {
-        SysUserInfo convert = ConvertUtils.convert(sysUserDto, SysUserInfo.class);
+        SysUserInfo convert = ConvertUtil.convert(sysUserDto, SysUserInfo.class);
         convert.setId(null);
         convert.setUserId(sysUserDto.getId());
         return convert;

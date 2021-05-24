@@ -11,7 +11,7 @@ import java.io.File;
  * @date 2021/2/28 12:39
  */
 @UtilityClass
-public class PathUtils {
+public class PathUtil {
     /**
      * 输出目录
      */
@@ -44,9 +44,9 @@ public class PathUtils {
 
     public static void main(String[] args) {
         // 获取绝对路径
-        System.out.println(PathUtils.getAbsolutePath(PathUtils.class, ""));
+        System.out.println(PathUtil.getAbsolutePath(PathUtil.class, ""));
         // 获取源码路径 E:\cloud\flowerpot\flowerpot-common\src\main\java
         //            E:\cloud\flowerpot\flowerpot-common\scr\main\java
-        System.out.println(PathUtils.getCodeSourcePath(PathUtils.class, ""));
+        System.out.println(PathUtil.getCodeSourcePath(PathUtil.class, ""));
     }
 }

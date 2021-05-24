@@ -8,7 +8,7 @@ import com.flowerpot.service.storage.constant.MetadataConstant;
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;
 import com.flowerpot.service.storage.service.StorageService;
-import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.InputStream;
 
@@ -18,22 +18,37 @@ import java.io.InputStream;
  * @author Mrhan
  * @date 2021/4/19 17:11
  */
-@RequiredArgsConstructor
 public class AliCloudOssStorageServiceImpl extends AbstractStorageServiceImpl implements StorageService {
 
-    private static final String BIZ_TYPE_FIELD_NAME = "business-type";
-    private static final String BIZ_ID_FIELD_NAME = "business-id";
     /**
      * OSS 客户端
      */
     private final OSSClient client;
 
     private final String bucketName;
+    /**
+     * 目录
+     */
+    private final String baseKey;
+
+    public AliCloudOssStorageServiceImpl(OSSClient client, String bucketName, String baseKey) {
+        this.client = client;
+        this.bucketName = bucketName;
+        this.baseKey = baseKey;
+        if (StringUtils.isEmpty(baseKey) || StringUtils.equals(baseKey, "/")) {
+            baseKey = "";
+        } else {
+            baseKey = baseKey.replaceAll("^/", "");
+            baseKey = baseKey.replaceAll("/$", "");
+            baseKey += "/";
+        }
+
+    }
 
     @Override
     public StoreFileResultDto save(StoreFileBo store) {
         ObjectMetadata metadata = createSaveObjectMetadata(store);
-        PutObjectRequest request = new PutObjectRequest(bucketName, store.getDevicePath(), store.getSource(), metadata);
+        PutObjectRequest request = new PutObjectRequest(bucketName, baseKey  + store.getDevicePath(), store.getSource(), metadata);
         client.putObject(request);
         // 访问URL
         return new StoreFileResultDto(store, store.getDevicePath());
@@ -41,19 +56,19 @@ public class AliCloudOssStorageServiceImpl extends AbstractStorageServiceImpl im
 
     @Override
     public InputStream read(String devicePath) {
-        OSSObject object = client.getObject(bucketName, devicePath);
+        OSSObject object = client.getObject(bucketName, baseKey + devicePath);
         return object.getObjectContent();
     }
 
     @Override
     public boolean remove(String devicePath) {
-        client.deleteObject(bucketName, devicePath);
+        client.deleteObject(bucketName, baseKey + devicePath);
         return true;
     }
 
     @Override
     public boolean exists(String devicePath) {
-        return client.doesObjectExist(bucketName, devicePath);
+        return client.doesObjectExist(bucketName, baseKey + devicePath);
     }
 
     /**

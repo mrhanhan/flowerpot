@@ -1,12 +1,20 @@
 package com.flowerpot.service.storage.impl;
 
+import com.flowerpot.common.utils.ConvertUtil;
+import com.flowerpot.common.utils.EnumUtil;
+import com.flowerpot.common.utils.config.ConfigTemplate;
+import com.flowerpot.service.storage.entity.StoreDevice;
+import com.flowerpot.service.storage.enums.StorageServiceConstructEnum;
 import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
 import com.flowerpot.service.storage.service.StorageService;
 import com.flowerpot.service.storage.service.StorageServiceProvider;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.stereotype.Service;
+import com.flowerpot.service.storage.service.StoreDeviceService;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * StorageServiceProviderImpl
@@ -14,26 +22,57 @@ import javax.annotation.Resource;
  * @author Mrhan
  * @date 2021/5/24 11:57
  */
-@Service
+@RequiredArgsConstructor
 public class StorageServiceProviderImpl implements StorageServiceProvider {
 
-    @Resource
-    private ConfigurableApplicationContext context;
+    /**
+     * 存储服务对象缓存
+     */
+    private final Map<Long, StorageService> storageServiceCacheMap = new HashMap<>();
+    /**
+     * 存储设备服务
+     */
+    @Getter
+    private final StoreDeviceService deviceService;
 
     @Override
-    public boolean validateStoreDeviceSupplier(StoreDeviceSupplierEnum storeDeviceSupplierEnum) {
+    public boolean isAvailable(Long deviceId) {
+        if (storageServiceCacheMap.containsKey(deviceId)) {
+            return true;
+        }
+        // 构建存储服务
+        StoreDevice storeDevice = deviceService.getById(deviceId);
+        if (Objects.isNull(storeDevice)) {
+            return false;
+        }
+        // 获取类型
+        StoreDeviceSupplierEnum storeDeviceSupplierEnum = EnumUtil.getByKey(StoreDeviceSupplierEnum.values(), storeDevice.getSupplier());
+        if (Objects.isNull(storeDeviceSupplierEnum)) {
+            return false;
+        }
+        StorageServiceConstructEnum storageServiceConstructEnum = EnumUtil.getByKey(StorageServiceConstructEnum.values(), storeDeviceSupplierEnum);
+        if (Objects.isNull(storageServiceConstructEnum)) {
+            return false;
+        }
+        // 转换为所需要的Properties
+        try {
+            ConfigTemplate template = ConvertUtil.jsonConvert(storeDevice.getConfig(), storeDeviceSupplierEnum.getPropertiesClass());
+            StorageService apply = storageServiceConstructEnum.getConstruct().apply(template);
+            // 服务是否可用
+            if (!apply.isAvailable()) {
+                return false;
+            }
+            // 放入缓存
+            storageServiceCacheMap.put(deviceId, apply);
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
         return true;
     }
 
     @Override
-    public StorageService apply(StoreDeviceSupplierEnum storeDeviceSupplierEnum) {
-        switch (storeDeviceSupplierEnum) {
-            case LOCAL_STORAGE:
-
-                return context.getBean(LocalFileStorageServiceImpl.class);
-            case ALI_CLOUD_OSS_STORAGE:
-                return context.getBean(AliCloudOssStorageServiceImpl.class);
-            default: return context.getBean(LocalFileStorageServiceImpl.class);
-        }
+    public StorageService getStorageService(Long deviceId) {
+        return storageServiceCacheMap.get(deviceId);
     }
 }

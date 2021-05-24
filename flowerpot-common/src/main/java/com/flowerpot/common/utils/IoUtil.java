@@ -13,7 +13,7 @@ import java.io.OutputStream;
  * @date 2021/2/27 12:25
  */
 @UtilityClass
-public class IoUtils {
+public class IoUtil {
 
     /**
      * 输入流写入输出流

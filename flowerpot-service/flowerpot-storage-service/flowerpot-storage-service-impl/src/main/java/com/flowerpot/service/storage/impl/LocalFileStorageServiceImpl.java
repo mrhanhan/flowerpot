@@ -1,6 +1,6 @@
 package com.flowerpot.service.storage.impl;
 
-import com.flowerpot.common.utils.IoUtils;
+import com.flowerpot.common.utils.IoUtil;
 import com.flowerpot.service.storage.dto.StoreFileBo;
 import com.flowerpot.service.storage.dto.StoreFileResultDto;
 import com.flowerpot.service.storage.service.StorageService;
@@ -30,7 +30,7 @@ public class LocalFileStorageServiceImpl extends AbstractStorageServiceImpl impl
     public StoreFileResultDto save(StoreFileBo store) {
         String devicePath = store.getDevicePath();
         FileOutputStream outputStream = new FileOutputStream(devicePath);
-        IoUtils.writeTo(store.getSource(), outputStream);
+        IoUtil.writeTo(store.getSource(), outputStream);
         outputStream.flush();
         outputStream.close();
         return new StoreFileResultDto(store, store.getDevicePath());
