@@ -10,13 +10,18 @@ import com.flowerpot.common.utils.config.annotation.VueComponent;
 import com.flowerpot.common.utils.config.model.ConfigField;
 import com.flowerpot.common.utils.config.model.KeyValue;
 import lombok.SneakyThrows;
+import lombok.experimental.UtilityClass;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -26,28 +31,28 @@ import java.util.stream.Stream;
  * @author Mrhan
  * @date 2021/5/24 15:55
  */
-public class ConfigResolve {
-    /**
-     * 需要解析的Bean类型
-     */
-    private final Class<?> beanClass;
-    /**
-     * 解析出来的配置列表
-     */
-    private List<ConfigField> fieldList;
+@UtilityClass
+public class ConfigResolveUtil {
 
-    public ConfigResolve(Class<?> beanClass) {
-        this.beanClass = beanClass;
-        fieldList = new ArrayList<>();
+    private static final Set<String> EXCLUDE_METHOD_NAME_SET = new HashSet<>();
+
+    static {
+        EXCLUDE_METHOD_NAME_SET.add("equals");
+        EXCLUDE_METHOD_NAME_SET.add("hashCode");
+        EXCLUDE_METHOD_NAME_SET.add("annotationType");
+        EXCLUDE_METHOD_NAME_SET.add("toString");
+        EXCLUDE_METHOD_NAME_SET.add("wait");
+        EXCLUDE_METHOD_NAME_SET.add("notify");
+        EXCLUDE_METHOD_NAME_SET.add("notifyAll");
     }
 
     /**
      * 解析
      */
-    public List<ConfigField> resolve() {
-        fieldList.clear();
-        resolve(beanClass, "", fieldList);
-        return fieldList;
+    public static List<ConfigField> resolve(Class<? extends ConfigTemplate> beanClass) {
+        List<ConfigField> list = new ArrayList<>();
+        resolve(beanClass, "", list);
+        return list;
     }
 
     /**
@@ -82,6 +87,7 @@ public class ConfigResolve {
             configField.setTag(config.tag());
             configField.setScope(scope);
             configField.setField(field.getName());
+            fieldList.add(configField);
             // 设置label
             Class<? extends Annotation> aClass = configAnnotation.annotationType();
             Method label = aClass.getMethod("label");
@@ -98,24 +104,30 @@ public class ConfigResolve {
     private void resolveAnnotation(Config config, Annotation configAnnotation, ConfigField configField, String scope, Field field) {
         if (configAnnotation instanceof Table) {
             // Table
-            Class<?> type = field.getType();
-            if (ConfigTemplate.class.isAssignableFrom(type)) {
+            Type type = field.getGenericType();
+            if (type instanceof ParameterizedType){}
+            ParameterizedType pType = (ParameterizedType)type;
+            Class<?> cls = (Class<?>) pType.getActualTypeArguments()[0];
+            if (ConfigTemplate.class.isAssignableFrom(cls)) {
                 List<ConfigField> children = new ArrayList<>();
-                resolve(type, "", children);
+                resolve(cls, "", children);
                 configField.setChildren(children);
             }
         } else if (configAnnotation instanceof CheckboxGroup) {
             Checkbox[] options = ((CheckboxGroup) configAnnotation).options();
-            configField.getAttrMap().put("options", Stream.of(options).map(t -> new KeyValue(t.label(), t.value())).collect(Collectors.toList()));
+            configField.getAttrMap().put("values", Stream.of(options).map(t -> new KeyValue(t.label(), t.value())).collect(Collectors.toList()));
         } else if (configAnnotation instanceof RadioGroup) {
             Radio[] options = ((RadioGroup) configAnnotation).options();
-            configField.getAttrMap().put("options", Stream.of(options).map(t -> new KeyValue(t.label(), t.value())).collect(Collectors.toList()));
+            configField.getAttrMap().put("values", Stream.of(options).map(t -> new KeyValue(t.label(), t.value())).collect(Collectors.toList()));
         } else if (configAnnotation instanceof VueComponent) {
             configField.setTag(((VueComponent) configAnnotation).tag());
         }
         // 配置属性
         Method[] methods = configAnnotation.annotationType().getMethods();
         for (Method method : methods) {
+            if (EXCLUDE_METHOD_NAME_SET.contains(method.getName())) {
+                continue;
+            }
             configField.getAttrMap().put(method.getName(), method.invoke(configAnnotation));
         }
     }
