@@ -5,6 +5,7 @@ import com.flowerpot.common.utils.config.annotation.Checkbox;
 import com.flowerpot.common.utils.config.annotation.CheckboxGroup;
 import com.flowerpot.common.utils.config.annotation.CustomizeTag;
 import com.flowerpot.common.utils.config.annotation.Input;
+import com.flowerpot.common.utils.config.annotation.Prop;
 import com.flowerpot.common.utils.config.annotation.Switch;
 import com.flowerpot.common.utils.config.annotation.Table;
 import com.flowerpot.common.utils.config.annotation.Textarea;
@@ -45,7 +46,11 @@ public class AppConfig implements ConfigTemplate {
     public JDBCConfig defaultJdbc;
 
 
-    @CustomizeTag(tag = "DeptTreeSelect", label = "默认部门")
+    @CustomizeTag(tag = "DeptTreeSelect", label = "默认部门", props = {
+            @Prop(name = "type", value = "1"),
+            @Prop(name = "mode", value = "select"),
+            @Prop(name = "multiple", value = "false"),
+    })
     private Long deptId;
 
     @Textarea(label = "系统描述")
