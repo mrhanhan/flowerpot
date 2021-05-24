@@ -20,6 +20,12 @@
             <artifactId>fastjson</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- 表达式 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <!-- Mybatis Plus Provided -->
         <dependency>
             <groupId>com.baomidou</groupId>

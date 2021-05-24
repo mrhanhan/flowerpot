@@ -3,11 +3,11 @@ package com.flowerpot.common.utils.config;
 import com.flowerpot.common.utils.config.annotation.Checkbox;
 import com.flowerpot.common.utils.config.annotation.CheckboxGroup;
 import com.flowerpot.common.utils.config.annotation.Config;
+import com.flowerpot.common.utils.config.annotation.CustomizeTag;
 import com.flowerpot.common.utils.config.annotation.Prop;
 import com.flowerpot.common.utils.config.annotation.Radio;
 import com.flowerpot.common.utils.config.annotation.RadioGroup;
 import com.flowerpot.common.utils.config.annotation.Table;
-import com.flowerpot.common.utils.config.annotation.CustomizeTag;
 import com.flowerpot.common.utils.config.model.ConfigField;
 import com.flowerpot.common.utils.config.model.KeyValue;
 import lombok.SneakyThrows;
@@ -55,6 +55,7 @@ public class ConfigResolveUtil {
      * 解析
      */
     public static List<ConfigField> resolve(Class<? extends ConfigTemplate> beanClass) {
+
         List<ConfigField> list = new ArrayList<>();
         resolve(beanClass, "", list);
         return list;
@@ -110,13 +111,14 @@ public class ConfigResolveUtil {
         if (configAnnotation instanceof Table) {
             // Table
             Type type = field.getGenericType();
-            if (type instanceof ParameterizedType){}
-            ParameterizedType pType = (ParameterizedType)type;
-            Class<?> cls = (Class<?>) pType.getActualTypeArguments()[0];
-            if (ConfigTemplate.class.isAssignableFrom(cls)) {
-                List<ConfigField> children = new ArrayList<>();
-                resolve(cls, "", children);
-                configField.setChildren(children);
+            if (type instanceof ParameterizedType) {
+                ParameterizedType pType = (ParameterizedType) type;
+                Class<?> cls = (Class<?>) pType.getActualTypeArguments()[0];
+                if (ConfigTemplate.class.isAssignableFrom(cls)) {
+                    List<ConfigField> children = new ArrayList<>();
+                    resolve(cls, "", children);
+                    configField.setChildren(children);
+                }
             }
         } else if (configAnnotation instanceof CheckboxGroup) {
             Checkbox[] options = ((CheckboxGroup) configAnnotation).options();
