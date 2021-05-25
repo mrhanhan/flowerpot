@@ -59,6 +59,9 @@
 
 ### 文档
 1. [Maven包依赖管理](./doc/maven.md)
-2. [存储服务说明](./doc/service/flowerpot-storage-service.md)
-3. [邮件服务说明](./doc/service/flowerpot-mailbox-service.md)
+2. 服务说明  
+    2.1. [存储服务说明](./doc/service/flowerpot-storage-service.md)  
+    2.2. [邮件服务说明](./doc/service/flowerpot-mailbox-service.md)
+3. flowerpot-admin  
+    3.1. [后台服务说明](./doc/flowerpot-admin/flowerpot-admin-web.md)
  
