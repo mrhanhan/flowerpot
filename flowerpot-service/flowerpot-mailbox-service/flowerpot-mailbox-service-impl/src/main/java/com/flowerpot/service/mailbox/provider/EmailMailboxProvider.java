@@ -1,7 +1,7 @@
 package com.flowerpot.service.mailbox.provider;
 
+import com.flowerpot.service.mailbox.dto.EmailMessageBo;
 import com.flowerpot.service.mailbox.service.entity.EmailMailbox;
-import com.flowerpot.service.mailbox.service.enums.EmailMailboxEnum;
 
 /**
  * EmailMailboxProvider
@@ -13,8 +13,8 @@ public interface EmailMailboxProvider {
 
     /**
      * 获取电子邮件邮箱
-     * @param mailboxEnum   电子邮件邮箱枚举
+     * @param emailMessageBo 需要发送的邮件信息
      * @return              返回电子邮件邮箱对象
      */
-    EmailMailbox get(EmailMailboxEnum mailboxEnum);
+    EmailMailbox get(EmailMessageBo emailMessageBo);
 }

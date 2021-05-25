@@ -1,0 +1,38 @@
+@startuml
+
+autonumber
+actor	"用户" as U
+participant "浏览器" as B
+participant "具体业务" as A
+participant "邮件服务" as I
+participant "邮箱提供者" as PS
+participant "邮件发送者" as S
+participant "邮件发送人提供者" as SP
+
+U -> B: 提交具体业务、例如:注册用户
+B -> A: 调用注册用户接口
+A -> A: (1).验证注册人的基本信息\n(2).生成临时密码\n(3).数据入库\n(4).发送邮件给主注册人邮箱
+A -> I: 调用邮件服务发送默认密码相关邮件
+I -> I: (1).保存邮件信息\n(2).获取邮件邮箱\n(3).获取邮件发送者\n(4).发送邮件
+I -> PS: 根据业务的配置获取具体的邮件邮箱信息
+PS -> I: 返回具体邮件邮箱信息
+PS -> SP: 根据邮箱构建邮件发送人
+SP -> PS: 返回邮件发送人服务
+PS -> S: 通过邮件发送人发送邮件
+
+alt 发送成功
+S -> PS: 邮件发送成功
+PS -> PS: 更新邮件消息状态为成功
+else 发送失败
+S -> PS: 邮件发送失败
+PS -> PS: 更新邮件消息状态为失败
+end
+PS -> I: 发送完成
+I -> A: 发送完成
+A -> B: 业务执行完成
+B -> U: 更新UI
+
+
+
+
+@enduml

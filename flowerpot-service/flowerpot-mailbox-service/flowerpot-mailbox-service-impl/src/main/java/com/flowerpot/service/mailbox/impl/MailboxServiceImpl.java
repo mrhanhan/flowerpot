@@ -59,10 +59,9 @@ public class MailboxServiceImpl implements MailboxService {
     @Override
     public void sendEmail(EmailMessageBo message) {
         // 获取电子邮件
-        EmailMailbox emailMailbox = getEmailMailbox(message.getMailbox());
+        EmailMailbox emailMailbox = getEmailMailbox(message);
         // 保存对象数据
         saveEmailData(emailMailbox, message);
-        EmailMessage emailMessage = message.getMessage();
         // 发送电子邮件
         Consumer<EmailStatusEnum> updateEmailMessageStatusFunc = (status) -> {
             LambdaUpdateChainWrapper<EmailMessage> wrapper = emailMessageService.lambdaUpdate();
@@ -152,20 +151,20 @@ public class MailboxServiceImpl implements MailboxService {
     /**
      * EmailMailbox
      *
-     * @param mailboxEnum 电子邮件邮箱枚举
+     * @param emailMessageBo 邮箱BO
      * @return 返回电子邮件邮箱对象
      */
-    private EmailMailbox getEmailMailbox(EmailMailboxEnum mailboxEnum) {
+    private EmailMailbox getEmailMailbox(EmailMessageBo emailMessageBo) {
         EmailMailbox mailbox = null;
         if (!CollectionUtils.isEmpty(emailMailboxProviderList)) {
             for (EmailMailboxProvider provider : emailMailboxProviderList) {
-                mailbox = provider.get(mailboxEnum);
+                mailbox = provider.get(emailMessageBo);
                 if (Objects.nonNull(mailbox)) {
                     return mailbox;
                 }
             }
         }
-        mailbox = emailMailboxService.getById(mailboxEnum.getId());
+        mailbox = emailMailboxService.getById(emailMessageBo.getMailbox().getId());
         Asset.notNull(mailbox, "电子邮箱未空");
         return mailbox;
     }
