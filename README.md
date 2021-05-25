@@ -1,9 +1,9 @@
 <p style="text-align: center;" align="center">
     <img src="https://gitee.com/nut-cloud/flowerpot/raw/master/doc/images/logo.gif" alt="花盆">
 </p>
-<p style="text-align: center;"  align="center">
+<div style="text-align: center;"  align="center">
     <h2  style="text-align: center;"  align="center">花盆</h2>
-</p>
+</div>
 <hr/>
 
 ### 起源
@@ -21,11 +21,15 @@
     |   ├── flowerapot-mailbox-service         -- 邮箱服务模块 根模块
     |   |   ├── flowerapot-mailbox-service-common  -- 邮箱服务 通用模块
     |   |   ├── flowerapot-mailbox-service-api     -- 邮箱服务 接口模块
+    |   |   ├── flowerapot-mailbox-service-dao     -- 邮箱服务 数据模块
     |   |   ├── flowerapot-mailbox-service-impl    -- 邮箱服务 实现模块
+    |   |   ├── flowerapot-mailbox-service-auto... -- 邮箱服务 自动配置模块
     |   ├── flowerapot-storage-service         -- 存储服务模块 根模块
     |   |   ├── flowerapot-storage-service-common  -- 存储服务 通用模块
     |   |   ├── flowerapot-storage-service-api     -- 存储服务 接口模块
+    |   |   ├── flowerapot-storage-service-dao     -- 存储服务 数据模块
     |   |   ├── flowerapot-storage-service-impl    -- 存储服务 实现模块
+    |   |   ├── flowerapot-mailbox-service-auto... -- 邮箱服务 自动配置模块
     |   ├── flowerapot-system-service          -- 系统服务模块 根模块
     |   |   ├── flowerapot-system-service-common   -- 系统服务 通用模块
     |   |   ├── flowerapot-system-service-dao      -- 系统服务 数据模块
@@ -42,6 +46,7 @@
  1. 业务模块不涉第三方组件（例如: Zookeeper, Redis, 等等,可以使用间接方式对第三方功能组件进行支持) 具体需要看业务功能。非强制性约定。三思而后行
  2. 所有功能必须归类，不可直接随意放到一个模块中。三思而后行
  3. 服务之间只能依赖 flowerpot-xxx-service-common、flowerpot-xxx-service-api。
+ 4. 所有服务模块都应当遵守 common, api, dao, impl, autoconfigure, rpc, web 分包 （按需而立）
     
 ### 技术栈
 #### 后端技术
