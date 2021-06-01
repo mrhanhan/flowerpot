@@ -16,6 +16,7 @@ create table if not exists `mb_email_message`
     `mailbox_id`  bigint(20)   not null comment '使用的邮箱ID ',
     `type`        int          not null comment '邮件类型， EmailTypeEnum',
     `buss_type`   int          not null comment '邮件业务， EmailBusinessTypeEnum',
+    `buss_id`     bigint(20)   not null comment '邮件业务， 业务ID',
     `title`       varchar(64)  not null comment '邮件标题',
     `sub_title`   varchar(128) not null comment '邮件子标题',
     `targets`     text         not null comment '邮件发送的目标',

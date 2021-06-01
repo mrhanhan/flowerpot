@@ -13,7 +13,10 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum EmailMailboxEnum implements KeyDescProvider {
-
+    /**
+     * 默认邮箱
+     */
+    SYSTEM_DEFAULT_MAILBOX( 1000L, "SYSTEM_DEFAULT_MAILBOX", "系统默认邮箱", "", "")
     ;
 
     private final Long id;

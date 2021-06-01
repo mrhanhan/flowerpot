@@ -16,6 +16,7 @@ public enum EmailStatusEnum implements KeyDescProvider {
     /**
      * 已发送
      */
+    WAIT(0, "待发送"),
     SEND_SUCCESS(10, "已发送"),
     SEND_FAIL(20, "发送失败"),
     SEND_EXCEPTION(30, "邮件系统异常"),

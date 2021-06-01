@@ -60,6 +60,16 @@
                 <version>${flowerpot.system.service.impl.version}</version>
             </dependency>
 
+            <!-- 邮箱模块 -->
+
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-service</artifactId>
+                <version>${flowerpot.mailbox.service.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

@@ -26,6 +26,12 @@
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-system-service-api</artifactId>
         </dependency>
+        <!-- 依赖邮箱模块 -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-mailbox-service-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

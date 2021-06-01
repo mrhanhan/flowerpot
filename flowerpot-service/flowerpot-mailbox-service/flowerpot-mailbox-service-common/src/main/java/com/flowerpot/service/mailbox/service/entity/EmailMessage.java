@@ -32,6 +32,11 @@ public class EmailMessage extends BaseEntity {
     @TableField("buss_type")
     private Integer bussType;
     /**
+     * 业务ID
+     */
+    @TableField("buss_id")
+    private Long bussId;
+    /**
      * 邮件标题
      */
     private String title;

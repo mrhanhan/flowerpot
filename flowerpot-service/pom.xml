@@ -21,6 +21,7 @@
         <module>flowerpot-system-service</module>
         <module>flowerpot-mailbox-service</module>
         <module>flowerpot-storage-service</module>
+        <module>flowerpot-authorize-service</module>
     </modules>
 
     <!-- 共同依赖的模块  -->

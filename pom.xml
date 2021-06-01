@@ -39,6 +39,8 @@
         <flowerpot.mailbox.service.version>1.0.0</flowerpot.mailbox.service.version>
         <!-- 存储服务 POM -->
         <flowerpot.storage.service.version>1.0.0</flowerpot.storage.service.version>
+        <!-- 授权服务 POM -->
+        <flowerpot.authorize.service.version>1.0.0</flowerpot.authorize.service.version>
         <!-- 依赖管理 版本号 End -->
 
         <springfox.version>2.9.2</springfox.version>
@@ -54,6 +56,9 @@
         <druid.version>1.1.21</druid.version>
 
         <hutool.version>5.3.7</hutool.version>
+        <!-- 模板版本 -->
+        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+        <freemarker.version>2.3.30</freemarker.version>
 
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -206,6 +211,19 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+            <!-- Thymeleaf -->
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf</artifactId>
+                <version>${thymeleaf.version}</version>
+            </dependency>
+            <!-- Freemarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

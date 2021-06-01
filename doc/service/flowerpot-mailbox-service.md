@@ -8,10 +8,13 @@
     1. EmailMailboxService 邮件邮箱服务，管理可以使用的邮箱
     2. EmailMessaheService 邮件消息服务。管理通过邮箱发送的邮件信息的状态、目标邮箱等等
     3. EmailMessageContentService 邮件消息内容服务，实现存储邮件内容的管理功能额
-    4. MailboxService 邮箱服务，实现具体发送邮件的功能
+    4. MailboxService 邮箱服务，实现具体发送邮件的功能， 外部调用的方法
     5. EmailMailboxProvider 邮件邮箱服务提供者接口
     6. EmailMessageSenderProvider 邮件消息发送人提供者接口
 
 
-### 调用顺序
-![](../images/flowerpot-mailbox-call.png)
+### 入口
+    1. MailboxService 调用邮件服务
+
+### 调用![](../images/flowerpot-mailbox-call.png)
+

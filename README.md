@@ -18,23 +18,28 @@
     ├── flowerapot-code-generator           -- 代码生成器模块
     |   ├── flowerpot-universal-code-generator  -- 通用的代码生成器
     ├── flowerapot-service                  -- service 根模块
+    |   ├── flowerapot-authorize-service         -- 认证服务模块 根模块
+    |   |   ├── flowerapot-authorize-service-common -- 认证服务 通用模块
+    |   |   ├── flowerapot-authorize-service-api    -- 认证服务 接口模块
+    |   |   ├── flowerapot-authorize-service-dao    -- 认证服务 数据模块
+    |   |   ├── flowerapot-authorize-service-impl   -- 认证服务 实现模块
     |   ├── flowerapot-mailbox-service         -- 邮箱服务模块 根模块
-    |   |   ├── flowerapot-mailbox-service-common  -- 邮箱服务 通用模块
-    |   |   ├── flowerapot-mailbox-service-api     -- 邮箱服务 接口模块
-    |   |   ├── flowerapot-mailbox-service-dao     -- 邮箱服务 数据模块
-    |   |   ├── flowerapot-mailbox-service-impl    -- 邮箱服务 实现模块
-    |   |   ├── flowerapot-mailbox-service-auto... -- 邮箱服务 自动配置模块
+    |   |   ├── flowerapot-mailbox-service-common   -- 邮箱服务 通用模块
+    |   |   ├── flowerapot-mailbox-service-api      -- 邮箱服务 接口模块
+    |   |   ├── flowerapot-mailbox-service-dao      -- 邮箱服务 数据模块
+    |   |   ├── flowerapot-mailbox-service-impl     -- 邮箱服务 实现模块
+    |   |   ├── flowerapot-mailbox-service-auto...  -- 邮箱服务 自动配置模块
     |   ├── flowerapot-storage-service         -- 存储服务模块 根模块
-    |   |   ├── flowerapot-storage-service-common  -- 存储服务 通用模块
-    |   |   ├── flowerapot-storage-service-api     -- 存储服务 接口模块
-    |   |   ├── flowerapot-storage-service-dao     -- 存储服务 数据模块
-    |   |   ├── flowerapot-storage-service-impl    -- 存储服务 实现模块
-    |   |   ├── flowerapot-mailbox-service-auto... -- 邮箱服务 自动配置模块
+    |   |   ├── flowerapot-storage-service-common   -- 存储服务 通用模块
+    |   |   ├── flowerapot-storage-service-api      -- 存储服务 接口模块
+    |   |   ├── flowerapot-storage-service-dao      -- 存储服务 数据模块
+    |   |   ├── flowerapot-storage-service-impl     -- 存储服务 实现模块
+    |   |   ├── flowerapot-mailbox-service-auto...  -- 邮箱服务 自动配置模块
     |   ├── flowerapot-system-service          -- 系统服务模块 根模块
-    |   |   ├── flowerapot-system-service-common   -- 系统服务 通用模块
-    |   |   ├── flowerapot-system-service-dao      -- 系统服务 数据模块
-    |   |   ├── flowerapot-system-service-api      -- 系统服务 接口模块
-    |   |   ├── flowerapot-system-service-impl     -- 系统服务 实现模块
+    |   |   ├── flowerapot-system-service-common    -- 系统服务 通用模块
+    |   |   ├── flowerapot-system-service-dao       -- 系统服务 数据模块
+    |   |   ├── flowerapot-system-service-api       -- 系统服务 接口模块
+    |   |   ├── flowerapot-system-service-impl      -- 系统服务 实现模块
     ├── flowerapot-admin                    -- admin 模块
     |   ├── flowerapot-admin-web                -- admin 外部接口模块
     ├── flowerapot-common                   -- 通用模块

@@ -55,6 +55,12 @@
             <artifactId>java-jwt</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- Thymeleaf -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>
