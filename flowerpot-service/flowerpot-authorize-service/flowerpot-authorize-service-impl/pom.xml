@@ -12,8 +12,33 @@
     <artifactId>flowerpot-authorize-service-impl</artifactId>
 
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
     </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${pom.basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>*.properties</exclude>
+                    <exclude>*.yml</exclude>
+                </excludes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${pom.basedir}/src/main/resources</directory>
+                <includes>
+                    <include>*.properties</include>
+                    <include>*.yml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${pom.basedir}/../../../sql/flowerpot-authorize-service</directory>
+                <includes>
+                    <include>*.sql</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 
 </project>

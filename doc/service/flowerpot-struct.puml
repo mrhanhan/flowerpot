@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+component "Client" {
+    actor “Web"
+    actor “App"
+    actor “小程序"
+}
+
+cloud "单机" {
+
+    component [Flowerpot Admin (Controller)] as Admin
+
+    component "Oauth 2" {
+       component 资源
+       component 授权
+       component 认证
+    }
+
+    folder "Service" {
+     node "System Service" as SS
+     node "Mailbox Service" as MS
+     node "Storage Service" as STS
+     node "Authorize Service" as AS
+    }
+
+    folder "网关" {
+        component [SpringSecurity (Filter)] as SSF
+    }
+
+    database "DB" {
+     node mysql
+    }
+
+}
+
+ Web <--> SSF
+ App <--> SSF
+ 小程序 <--> SSF
+
+ SSF <--> Admin
+ SSF <-> 认证
+
+ 认证 <-> 授权
+ 授权 <-> 资源
+
+
+ Admin <--> SS
+ Admin <--> MS
+ Admin <--> STS
+ Admin <--> AS
+
+
+ SS <--> mysql
+ MS <--> mysql
+ STS <--> mysql
+ AS <--> mysql
+
+@enduml

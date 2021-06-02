@@ -10,7 +10,7 @@
   系统菜单栏
  */
 drop table if exists `sys_menu`;
-create table `sys_menu`
+create table if not exists `sys_menu`
 (
     `id`            bigint(20) primary key comment '菜单栏ID',
     `code`          varchar(32)  not null default '' comment '菜单栏CODE 唯一',
@@ -36,7 +36,7 @@ create table `sys_menu`
   系统角色表
  */
 drop table if exists `sys_role`;
-create table `sys_role`
+create table if not exists  `sys_role`
 (
     `id`          bigint(20) primary key comment '角色ID',
     `name`        varchar(128) not null comment '角色名称',
@@ -54,7 +54,7 @@ create table `sys_role`
   系统角色表
  */
 drop table if exists `sys_dept`;
-create table `sys_dept`
+create table if not exists `sys_dept`
 (
     `id`              bigint(20) primary key comment '部门ID',
     `name`            varchar(128) not null comment '部门名称',
@@ -74,7 +74,7 @@ create table `sys_dept`
     新增部门时设置此数据
  */
 drop table if exists `sys_dept_permission`;
-create table `sys_dept_permission`
+create table if not exists `sys_dept_permission`
 (
     `id`          bigint(20) primary key comment '部门ID',
     `dept_id`     bigint(20) not null comment '部门ID',
@@ -93,7 +93,7 @@ create table `sys_dept_permission`
     新增部门时设置此数据
  */
 drop table if exists `sys_dept_permission_item`;
-create table `sys_dept_permission_item`
+create table if not exists `sys_dept_permission_item`
 (
     `id`                 bigint(20) primary key comment '部门ID',
     `dept_id`            bigint(20) not null comment '部门ID',
@@ -130,7 +130,7 @@ create table `sys_user`
   用户信息表
  */
 drop table if exists `sys_user_info`;
-create table `sys_user_info`
+create table if not exists `sys_user_info`
 (
     `id`          bigint(20) primary key comment 'ID',
     `user_id`     bigint(20)   not null comment '用户ID',

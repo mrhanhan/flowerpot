@@ -1,0 +1,31 @@
+@startuml
+
+card 用户 as U
+
+node 资源区 as AP {
+    node 资源组2 {
+        card 资源5
+        card 资源6
+        card 资源7
+        card 资源8
+    }
+    node 资源组1 {
+        card 资源1
+        card 资源2
+        card 资源3
+        card 资源4
+    }
+
+}
+
+card 角色 as R
+node 会话 as S
+node 角色组 as RS
+
+U --> RS: 1 : n 个用户可以拥有多个角色组
+U <-> S: 登录时一个用户对应一个会话
+S -> RS: 会话中存这真是的角色权限信息
+RS --> R: 1: n 一个角色组存在多个角色
+R --> AP: 一个角色对应多个操纵资源
+
+@enduml
