@@ -1,7 +1,7 @@
 package com.flowerpot.service.mailbox.provider;
 
 import com.flowerpot.service.mailbox.dto.EmailMessageBo;
-import com.flowerpot.service.mailbox.service.entity.EmailMailbox;
+import com.flowerpot.service.mailbox.entity.EmailMailbox;
 
 /**
  * EmailMailboxProvider

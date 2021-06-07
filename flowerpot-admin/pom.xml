@@ -45,7 +45,14 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
-
+            <!-- 受权服务 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-authorize-service</artifactId>
+                <version>${flowerpot.authorize.service.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
 
             <!-- Admin Web -->
             <dependency>

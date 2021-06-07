@@ -4,12 +4,12 @@ import com.flowerpot.common.utils.Builder;
 import com.flowerpot.common.utils.UniqueCodeGen;
 import com.flowerpot.common.utils.template.TemplateResolve;
 import com.flowerpot.service.mailbox.dto.EmailMessageBo;
-import com.flowerpot.service.mailbox.service.entity.EmailMessage;
-import com.flowerpot.service.mailbox.service.entity.EmailMessageContent;
-import com.flowerpot.service.mailbox.service.enums.EmailBusinessTypeEnum;
-import com.flowerpot.service.mailbox.service.enums.EmailContentTypeEnum;
-import com.flowerpot.service.mailbox.service.enums.EmailMailboxEnum;
-import com.flowerpot.service.mailbox.service.enums.EmailStatusEnum;
+import com.flowerpot.service.mailbox.entity.EmailMessage;
+import com.flowerpot.service.mailbox.entity.EmailMessageContent;
+import com.flowerpot.service.mailbox.enums.EmailBusinessTypeEnum;
+import com.flowerpot.service.mailbox.enums.EmailContentTypeEnum;
+import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;
+import com.flowerpot.service.mailbox.enums.EmailStatusEnum;
 
 import java.util.Arrays;
 

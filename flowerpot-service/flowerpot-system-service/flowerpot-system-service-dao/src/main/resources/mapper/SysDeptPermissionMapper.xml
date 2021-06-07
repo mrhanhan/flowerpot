@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.flowerpot.service.system.dao.SysDeptPermissionMapper">
+<mapper namespace="com.flowerpot.service.system.mapper.SysDeptPermissionMapper">
 
 
     <sql id = "common_select_column"> id, dept_id, type, create_time, create_by, modify_time, modify_by, effective</sql>

@@ -1,4 +1,4 @@
-package com.flowerpot.service.system.api
+package com.flowerpot.service.system.service
 
 import com.intellij.database.model.DasTable
 import com.intellij.database.util.Case

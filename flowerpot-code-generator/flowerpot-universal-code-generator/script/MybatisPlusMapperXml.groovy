@@ -1,4 +1,4 @@
-package com.flowerpot.service.system.dao
+package com.flowerpot.service.system.mapper
 
 import com.intellij.database.model.DasTable
 import com.intellij.database.util.Case

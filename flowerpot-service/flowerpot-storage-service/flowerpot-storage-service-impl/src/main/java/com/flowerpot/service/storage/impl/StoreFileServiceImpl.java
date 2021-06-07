@@ -2,7 +2,7 @@ package com.flowerpot.service.storage.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.storage.dao.StoreFileMapper;
+import com.flowerpot.service.storage.mapper.StoreFileMapper;
 import com.flowerpot.service.storage.entity.StoreFile;
 import com.flowerpot.service.storage.service.StoreFileAttributeService;
 import com.flowerpot.service.storage.service.StoreFileService;

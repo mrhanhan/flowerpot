@@ -2,9 +2,9 @@ package com.flowerpot.service.system.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.system.api.SysMenuService;
-import com.flowerpot.service.system.common.entities.SysMenu;
-import com.flowerpot.service.system.dao.SysMenuMapper;
+import com.flowerpot.service.system.service.SysMenuService;
+import com.flowerpot.service.system.entity.SysMenu;
+import com.flowerpot.service.system.mapper.SysMenuMapper;
 import org.springframework.stereotype.Service;
 
 /**

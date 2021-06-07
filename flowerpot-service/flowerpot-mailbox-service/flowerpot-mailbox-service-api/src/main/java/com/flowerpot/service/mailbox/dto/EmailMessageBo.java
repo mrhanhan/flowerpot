@@ -1,8 +1,8 @@
 package com.flowerpot.service.mailbox.dto;
 
-import com.flowerpot.service.mailbox.service.entity.EmailMessage;
-import com.flowerpot.service.mailbox.service.entity.EmailMessageContent;
-import com.flowerpot.service.mailbox.service.enums.EmailMailboxEnum;
+import com.flowerpot.service.mailbox.entity.EmailMessage;
+import com.flowerpot.service.mailbox.entity.EmailMessageContent;
+import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;
 import lombok.Data;
 
 /**

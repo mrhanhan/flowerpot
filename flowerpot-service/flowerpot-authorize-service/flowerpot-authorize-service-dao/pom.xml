@@ -11,7 +11,12 @@
 
     <artifactId>flowerpot-authorize-service-dao</artifactId>
 
-    <properties>
-    </properties>
+    <dependencies>
+        <!-- Common -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-authorize-service-common</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

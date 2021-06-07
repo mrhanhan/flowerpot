@@ -1,7 +1,7 @@
 package com.flowerpot.service.mailbox.service;
 
 import com.flowerpot.common.model.BaseService;
-import com.flowerpot.service.mailbox.service.entity.EmailMessage;
+import com.flowerpot.service.mailbox.entity.EmailMessage;
 
 /**
  * EmailMessageService

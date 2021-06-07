@@ -2,9 +2,9 @@ package com.flowerpot.service.system.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.system.api.SysDeptService;
-import com.flowerpot.service.system.common.entities.SysDept;
-import com.flowerpot.service.system.dao.SysDeptMapper;
+import com.flowerpot.service.system.service.SysDeptService;
+import com.flowerpot.service.system.entity.SysDept;
+import com.flowerpot.service.system.mapper.SysDeptMapper;
 import org.springframework.stereotype.Service;
 
 /**

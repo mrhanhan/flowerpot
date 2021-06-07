@@ -1,7 +1,7 @@
 package com.flowerpot.service.mailbox.utils;
 
-import com.flowerpot.service.mailbox.service.enums.EmailBusinessTypeEnum;
-import com.flowerpot.service.mailbox.service.enums.EmailMailboxEnum;
+import com.flowerpot.service.mailbox.enums.EmailBusinessTypeEnum;
+import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;
 import lombok.experimental.UtilityClass;
 
 /**
