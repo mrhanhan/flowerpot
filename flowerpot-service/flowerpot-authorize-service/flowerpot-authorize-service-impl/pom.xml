@@ -11,8 +11,19 @@
 
     <artifactId>flowerpot-authorize-service-impl</artifactId>
 
-    <properties>
-    </properties>
+    <dependencies>
+        <!-- API -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-authorize-service-api</artifactId>
+        </dependency>
+        <!-- DAO -->
+        <dependency>
+            <groupId>com.flowerpot</groupId>
+            <artifactId>flowerpot-authorize-service-dao</artifactId>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <resources>
