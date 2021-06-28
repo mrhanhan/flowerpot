@@ -50,7 +50,7 @@ create table if not exists `ac_auth_resource`
     `system`      tinyint     not null comment '是否是系统资源',
     `name`        varchar(64) not null comment '资源名称',
     `code`        varchar(64) not null comment '资源编码、权限码',
-    `type`        int         not null comment '受权资源类型: 1 网络资源 2 授权码',
+    `type`        int         not null comment '受权资源类型: 1 URL 2 授权码/按钮',
     `raw`         text        not null comment '具体受权资源的数据, json',
     `desc`        varchar(255) comment '资源描述',
     `create_time` datetime    not null default current_timestamp comment '创建时间',
@@ -60,6 +60,24 @@ create table if not exists `ac_auth_resource`
     `effective`   tinyint     not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '受权资源表';
 
+/**
+  用于拦截URL资源或者其他资源的拦截规则表
+  和 ac_auth_resource 是多对一关系
+ */
+
+create table if not exists `ac_auth_resource_rule`
+(
+    `id`          bigint(20) primary key comment 'ID',
+    `resource_id` bigint(20)   not null comment '受权资源ID',
+    `type`   int          not null comment '规则类型：权限码，角色，等等',
+    `expression`  varchar(512) not null comment '表达式，可以是权限码',
+    `desc`        varchar(255)          default '' comment '描述',
+    `create_time` datetime     not null default current_timestamp comment '创建时间',
+    `create_by`   bigint(20)            default 0 comment '创建人',
+    `modify_time` datetime              default current_timestamp comment '修改时间',
+    `modify_by`   bigint(20)            default 0 comment '修改人',
+    `effective`   tinyint      not null default 1 comment '是否是有效的记录 1 有效 0 无效'
+) comment '受权规则表';
 /**
   角色
   树形，角色可继承
@@ -99,3 +117,9 @@ create table if not exists `ac_role_tree`
   用户可以拥有多个身份
   待定
  */
+
+
+/*=========================================== 索引 ======================================*/
+
+# drop index `idx_ac_auth_resource_rule-resource_id`;
+# create index  `idx_ac_auth_resource_rule-resource_id` on `ac_auth_resource_rule`(resource_id);

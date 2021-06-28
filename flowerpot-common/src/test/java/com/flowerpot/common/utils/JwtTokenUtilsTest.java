@@ -13,6 +13,7 @@ public class JwtTokenUtilsTest {
         System.out.println(token);
 
         JwtTokenSubject verify = JwtTokenUtils.verify(token);
+
         System.out.println(verify.getClaim("Hello").asInt());
     }
 }

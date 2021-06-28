@@ -57,6 +57,7 @@ create table if not exists `mb_email_mailbox`
     `name`          varchar(32)  not null comment '邮箱名称',
     `account`       varchar(32)  not null comment '邮箱账号',
     `password`      varchar(255) not null comment '邮箱密码',
+    `desc`          varchar(255) not null comment '描述信息',
     `mail_host`     varchar(255) not null comment '邮箱服务器机器',
     `mail_protocol` varchar(255) not null comment '邮件协议',
     `mail_port`     varchar(6)   not null comment '邮箱服务器机器端口',

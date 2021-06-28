@@ -12,26 +12,26 @@ import java.io.Serializable;
  * @author Mrhan
  * @date 2021-06-07 14:29
  */
-@TableName("ac_role")
+@TableName("ac_auth_resource_rule")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Role extends BaseEntity implements Serializable{
+public class AuthResourceRule extends BaseEntity implements Serializable{
 
     /**
-     * 上级角色ID
+     * 受权资源ID
      */
-    @TableField("parent_id")
-    private Long parentId;
+    @TableField("resource_id")
+    private Long resourceId;
     /**
-     * 角色层级
+     * 规则类型：权限码，角色，等等
      */
-    private Integer level;
+    private Integer type;
     /**
-     * 角色名称
+     * 表达式
      */
-    private String name;
+    private String expression;
     /**
-     * 角色名称
+     * 规则说明
      */
     @TableField("`desc`")
     private String desc;

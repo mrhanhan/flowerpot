@@ -2,7 +2,7 @@ package com.flowerpot.service.mailbox.impl;
 
 import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import com.flowerpot.common.model.BaseEntity;
-import com.flowerpot.common.utils.Asset;
+import com.flowerpot.common.utils.Assert;
 import com.flowerpot.service.mailbox.dto.EmailMessageBo;
 import com.flowerpot.service.mailbox.exception.EmailMailboxException;
 import com.flowerpot.service.mailbox.provider.EmailMailboxProvider;
@@ -14,7 +14,6 @@ import com.flowerpot.service.mailbox.service.MailboxService;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;
 import com.flowerpot.service.mailbox.entity.EmailMessage;
 import com.flowerpot.service.mailbox.entity.EmailMessageContent;
-import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;
 import com.flowerpot.service.mailbox.enums.EmailStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -144,7 +143,7 @@ public class MailboxServiceImpl implements MailboxService {
     private MailSender getMailSender(EmailMailbox emailMailbox) {
         // 获取邮件发送服务
         MailSender sender = emailMessageSenderProvider.getSender(emailMailbox);
-        Asset.notNull(emailMailbox, "邮件发送服务获取失败");
+        Assert.notNull(emailMailbox, "邮件发送服务获取失败");
         return sender;
     }
 
@@ -165,7 +164,7 @@ public class MailboxServiceImpl implements MailboxService {
             }
         }
         mailbox = emailMailboxService.getById(emailMessageBo.getMailbox().getId());
-        Asset.notNull(mailbox, "电子邮箱未空");
+        Assert.notNull(mailbox, "电子邮箱未空");
         return mailbox;
     }
 }

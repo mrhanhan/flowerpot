@@ -1,5 +1,6 @@
 package com.flowerpot.service.authorize.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.flowerpot.common.model.BaseEntity;
 import lombok.Data;
@@ -27,5 +28,6 @@ public class AuthResourceGroup extends BaseEntity implements Serializable{
     /**
      * 资源组描述
      */
+    @TableField("`desc`")
     private String desc;
 }

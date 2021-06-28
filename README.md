@@ -4,6 +4,10 @@
 <div style="text-align: center;"  align="center">
     <h2  style="text-align: center;"  align="center">花盆</h2>
 </div>
+<div align="center">
+<a href='https://gitee.com/nut-cloud/flowerpot/stargazers'><img src='https://gitee.com/nut-cloud/flowerpot/badge/star.svg?theme=dark' alt='star'></img></a>
+<a href='https://gitee.com/nut-cloud/flowerpot/stargazers'><img src='https://gitee.com/nut-cloud/flowerpot/badge/fork.svg?theme=dark' alt='star'></img></a>
+</div>
 <hr/>
 
 ### 起源

@@ -35,7 +35,7 @@ public class AuthResource extends BaseEntity implements Serializable{
      */
     private String code;
     /**
-     * 受权资源类型: 1 网络资源 2 授权码
+     * 受权资源类型: 1 URL 2 授权码/按钮
      */
     private Integer type;
     /**
@@ -45,5 +45,6 @@ public class AuthResource extends BaseEntity implements Serializable{
     /**
      * 资源描述
      */
+    @TableField("`desc`")
     private String desc;
 }

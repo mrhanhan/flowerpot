@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.flowerpot.service", "com.flowerpot.admin"})
-@MapperScan(basePackages = "com.flowerpot.service.*.dao")
+@MapperScan(basePackages = "com.flowerpot.service.*.mapper")
 @EnableFlowerpotMailbox
 @EnableFlowerpotStorage
 public class FlowerpotAdminApplication {

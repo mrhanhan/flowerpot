@@ -1,15 +1,15 @@
 server:
-  port: 8081
+  port: 7082
 spring:
   application:
     name: flowerpot-admin-web
 
   # 数据源
   datasource:
-    url: jdbc:mysql://server.mrhan.local:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: mrhan
-    password: mrhan777_
+    username: root
+    password: 123456
     schema:
       - classpath:flowerpot-system.sql
       - classpath*:flowerpot-mailbox.sql

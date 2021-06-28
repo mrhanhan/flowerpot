@@ -20,19 +20,28 @@ public class EmailMailbox extends BaseEntity {
     /**
      * 配置Code EmailMailboxEnum
      */
+    @TableField("`code`")
     private String code;
     /**
      * 邮箱名称
      */
+    @TableField("`name`")
     private String name;
     /**
      * 邮箱账号
      */
+    @TableField("`account`")
     private String account;
     /**
      * 邮箱密码
      */
+    @TableField("`password`")
     private String password;
+    /**
+     * 描述信息
+     */
+    @TableField("`desc`")
+    private String desc;
     /**
      * 邮箱服务器机器
      */
@@ -46,7 +55,7 @@ public class EmailMailbox extends BaseEntity {
     /**
      * 邮箱服务器机器端口
      */
-    @TableField("mail_protocol")
+    @TableField("mail_port")
     private String mailPort;
     /**
      * 配置信息

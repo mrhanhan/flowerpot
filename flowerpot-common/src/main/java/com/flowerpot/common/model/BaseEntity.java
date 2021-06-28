@@ -2,6 +2,7 @@ package com.flowerpot.common.model;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -25,12 +26,14 @@ public class BaseEntity implements Serializable {
      * 创建者
      */
     @TableField(value = "create_by", fill = FieldFill.INSERT)
+    @JsonIgnore
     private Long createBy;
 
     /**
      * 更改者
      */
     @TableField(value = "modify_by", fill = FieldFill.INSERT_UPDATE)
+    @JsonIgnore
     private Long modifyBy;
 
     /**
@@ -48,5 +51,6 @@ public class BaseEntity implements Serializable {
      * 记录是否是有效的
      */
     @TableField(fill = FieldFill.INSERT)
+    @JsonIgnore
     private Integer effective;
 }

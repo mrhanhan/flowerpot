@@ -11,7 +11,7 @@ import java.util.Objects;
  * @date 2021/3/24 14:33
  */
 @UtilityClass
-public class Asset {
+public class Assert {
 
     /**
      * 不能未空
@@ -34,4 +34,6 @@ public class Asset {
             throw new AssetException(message);
         }
     }
+
+
 }
