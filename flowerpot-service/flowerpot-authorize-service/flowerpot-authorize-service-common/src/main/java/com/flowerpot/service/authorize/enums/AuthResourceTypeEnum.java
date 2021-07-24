@@ -24,7 +24,7 @@ public enum AuthResourceTypeEnum implements KeyProvider<Integer> {
     /**
      * 授权码/按钮，一个关联的key,网关不会对其进行处理。由具体需求硬编码完成
      */
-    BUTTON(2),
+    IDENTIFIER(2),
     ;
 
     private final Integer key;

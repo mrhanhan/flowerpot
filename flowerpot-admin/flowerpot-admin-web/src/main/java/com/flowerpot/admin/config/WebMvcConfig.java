@@ -29,8 +29,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
             if (converter instanceof MappingJackson2HttpMessageConverter) {
                 ObjectMapper objectMapper = ((MappingJackson2HttpMessageConverter) converter).getObjectMapper();
                 getModuleList().forEach(objectMapper::registerModule);
+                return;
             }
         }
+        MappingJackson2HttpMessageConverter converter  = new MappingJackson2HttpMessageConverter();
+        getModuleList().forEach(converter.getObjectMapper()::registerModule);
+        converters.add(converter);
     }
 
     /**
@@ -39,9 +43,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
      */
     private List<Module> getModuleList() {
         SimpleModule module = new SimpleModule();
-
         module.addSerializer(Long.class, ToStringSerializer.instance);
-
         return Collections.singletonList(module);
     }
 

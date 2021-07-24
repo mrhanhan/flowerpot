@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant SpringBoot启动 as SB
+participant 网关程序 as G
+participant 授权资源规则表 as R
+
+SB -> SB: 启动SpringBoot
+SB -> G: 初始化权限拦截
+G -> R: 查询数据库授权资源连接规则表
+R -> G: 返回规则数据
+G -> G: 对规则进行排序和处理，然后注册到拦截过滤器中
+G -> SB: 执行完毕
+
+@enduml

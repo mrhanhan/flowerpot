@@ -53,6 +53,4 @@ public interface BaseService<T extends BaseEntity> extends IService<T> {
      * @return                  返回ListWrapper
      */
     <Key> Map<Key, List<T>> listMap(Wrapper<T> wrapper, Function<T, Key> getKeyFunction);
-
-
 }

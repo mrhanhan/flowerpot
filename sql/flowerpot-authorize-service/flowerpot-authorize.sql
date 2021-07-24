@@ -51,7 +51,7 @@ create table if not exists `ac_auth_resource`
     `name`        varchar(64) not null comment '资源名称',
     `code`        varchar(64) not null comment '资源编码、权限码',
     `type`        int         not null comment '受权资源类型: 1 URL 2 授权码/按钮',
-    `raw`         text        not null comment '具体受权资源的数据, json',
+    `raw`         text        not null comment '具体受权资源的数据',
     `desc`        varchar(255) comment '资源描述',
     `create_time` datetime    not null default current_timestamp comment '创建时间',
     `create_by`   bigint(20)           default 0 comment '创建人',

@@ -23,8 +23,9 @@ public class AuthResource extends BaseEntity implements Serializable{
     @TableField("group_id")
     private Long groupId;
     /**
-     * 是否是系统资源
+     * 是否是系统资源 AuthSystemEnum
      */
+    @TableField("`system`")
     private Integer system;
     /**
      * 资源名称
@@ -33,9 +34,10 @@ public class AuthResource extends BaseEntity implements Serializable{
     /**
      * 资源编码、权限码
      */
+    @TableField("`code`")
     private String code;
     /**
-     * 受权资源类型: 1 URL 2 授权码/按钮
+     * 受权资源类型: 1 URL 2 授权码/按钮 AuthResourceTypeEnum
      */
     private Integer type;
     /**

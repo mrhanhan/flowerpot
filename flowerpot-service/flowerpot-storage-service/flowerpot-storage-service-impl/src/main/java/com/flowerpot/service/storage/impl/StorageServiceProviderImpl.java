@@ -1,8 +1,8 @@
 package com.flowerpot.service.storage.impl;
 
-import com.flowerpot.common.utils.ConvertUtil;
 import com.flowerpot.common.utils.EnumUtil;
 import com.flowerpot.common.utils.config.ConfigTemplate;
+import com.flowerpot.common.utils.convert.TextConvertUtil;
 import com.flowerpot.service.storage.entity.StoreDevice;
 import com.flowerpot.service.storage.enums.StorageServiceConstructEnum;
 import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
@@ -56,7 +56,7 @@ public class StorageServiceProviderImpl implements StorageServiceProvider {
         }
         // 转换为所需要的Properties
         try {
-            ConfigTemplate template = ConvertUtil.jsonConvert(storeDevice.getConfig(), storeDeviceSupplierEnum.getPropertiesClass());
+            ConfigTemplate template = TextConvertUtil.toObject(storeDevice.getConfig(), storeDeviceSupplierEnum.getPropertiesClass());
             StorageService apply = storageServiceConstructEnum.getConstruct().apply(template);
             // 服务是否可用
             if (!apply.isAvailable()) {

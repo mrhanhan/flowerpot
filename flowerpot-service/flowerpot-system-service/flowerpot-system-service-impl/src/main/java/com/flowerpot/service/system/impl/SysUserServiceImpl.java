@@ -3,7 +3,7 @@ package com.flowerpot.service.system.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.common.utils.ConvertUtil;
+import com.flowerpot.common.utils.convert.ConvertUtil;
 import com.flowerpot.common.utils.Model;
 import com.flowerpot.common.utils.UniqueCodeGen;
 import com.flowerpot.common.utils.template.TemplateResolve;

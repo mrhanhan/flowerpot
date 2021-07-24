@@ -22,8 +22,9 @@ public class AuthResourceGroup extends BaseEntity implements Serializable{
      */
     private String name;
     /**
-     * 是否是系统资源组 1 是， 0 否
+     * 是否是系统资源组 1 是， 0 否 AuthSystemEnum
      */
+    @TableField("`system`")
     private Integer system;
     /**
      * 资源组描述
