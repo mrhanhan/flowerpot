@@ -1,12 +1,14 @@
 package com.flowerpot.admin.modules.authorize.constant;
 
+import com.flowerpot.admin.common.constant.CommonMessageConstant;
+
 /**
  * AuthorizeMessageConstant
  *
  * @author Mrhan
  * @date 2021/6/27 20:24
  */
-public interface AuthorizeMessageConstant {
+public interface AuthorizeMessageConstant extends CommonMessageConstant {
 
     String AUTH_RESOURCE_GROUP_NAME_NOT_NULL = "授权资源组名称不能为空";
     String AUTH_RESOURCE_GROUP_NOT_EXISTS = "授权资源组不存在";

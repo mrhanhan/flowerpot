@@ -96,6 +96,8 @@ public class AuthResourceServiceImpl extends BaseServiceImpl<AuthResource, AuthR
      * @param authResourceParam  资源规则信息
      */
     private void saveRule( AuthResource authResource, AuthResourceParam authResourceParam) {
-        authResourceRuleService.saveBatch(AuthResourceConverts.convertAuthResourceRuleList(authResourceParam.getAuthResourceRule(), authResource.getId()));
+        if(Objects.nonNull(authResourceParam.getAuthResourceRule())) {
+            authResourceRuleService.saveBatch(AuthResourceConverts.convertAuthResourceRuleList(authResourceParam.getAuthResourceRule(), authResource.getId()));
+        }
     }
 }

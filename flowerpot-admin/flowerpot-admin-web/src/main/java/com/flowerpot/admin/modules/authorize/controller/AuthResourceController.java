@@ -7,6 +7,7 @@ import com.flowerpot.common.PageResult;
 import com.flowerpot.common.Result;
 import com.flowerpot.common.VerifyForm;
 import com.flowerpot.common.utils.Assert;
+import com.flowerpot.service.authorize.dto.param.AuthResourceParam;
 import com.flowerpot.service.authorize.entity.AuthResource;
 import com.flowerpot.service.authorize.enums.AuthSystemEnum;
 import com.flowerpot.service.authorize.service.AuthResourceGroupService;
@@ -32,7 +33,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/api/authorize/auth")
 @Api(tags = {"授权服务-授权资源"})
-public class AuthResourceController implements VerifyForm<AuthResource> {
+public class AuthResourceController implements VerifyForm<AuthResourceParam> {
     @Resource
     private AuthResourceService authResourceService;
     @Resource
@@ -50,7 +51,7 @@ public class AuthResourceController implements VerifyForm<AuthResource> {
 
     @ApiOperation("授权资源-保存")
     @PostMapping("/save")
-    public Result<AuthResource> save(@RequestBody AuthResource authResource) {
+    public Result<AuthResourceParam> save(@RequestBody AuthResourceParam authResource) {
         verifySaveForm(authResource);
         authResourceService.save(authResource);
         return Result.success(authResource);
@@ -58,9 +59,9 @@ public class AuthResourceController implements VerifyForm<AuthResource> {
 
     @ApiOperation("授权资源-更新")
     @PostMapping("/update")
-    public Result<AuthResource> update(@RequestBody AuthResource authResource) {
+    public Result<AuthResourceParam> update(@RequestBody AuthResourceParam authResource) {
         verifySaveForm(authResource);
-        authResourceService.updateById(authResource);
+        authResourceService.update(authResource);
         return Result.success(authResource);
     }
 
@@ -72,14 +73,17 @@ public class AuthResourceController implements VerifyForm<AuthResource> {
     }
 
     @Override
-    public void verifyForm(AuthResource formData, int flag) {
+    public void verifyForm(AuthResourceParam formData, int flag) {
+        AuthResource authResource = formData.getAuthResource();
+        Assert.notNull(authResource, AuthorizeMessageConstant.ILLEGAL_OPERATE);
+//        Assert.notNull(formData.getAuthResourceRule(), AuthorizeMessageConstant.ILLEGAL_OPERATE);
         // 验证资源名称、code 分组
-        Assert.notEmpty(formData.getName(), AuthorizeMessageConstant.AUTH_RESOURCE_NAME_NOT_NULL);
-        Assert.notEmpty(formData.getCode(), AuthorizeMessageConstant.AUTH_RESOURCE_CODE_NULL);
+        Assert.notEmpty(authResource.getName(), AuthorizeMessageConstant.AUTH_RESOURCE_NAME_NOT_NULL);
+        Assert.notEmpty(authResource.getCode(), AuthorizeMessageConstant.AUTH_RESOURCE_CODE_NULL);
         // 验证Code是否重复
-        Assert.isTrue(verifyCodeExists(formData.getId(), formData.getCode()), AuthorizeMessageConstant.AUTH_RESOURCE_CODE_REPEAT);
+        Assert.isTrue(verifyCodeExists(authResource.getId(), authResource.getCode()), AuthorizeMessageConstant.AUTH_RESOURCE_CODE_REPEAT);
 
-        formData.setSystem(AuthSystemEnum.CUSTOMIZE.getKey());
+        authResource.setSystem(AuthSystemEnum.CUSTOMIZE.getKey());
     }
 
     /**
