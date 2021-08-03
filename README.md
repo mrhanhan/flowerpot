@@ -56,6 +56,7 @@
  2. 所有功能必须归类，不可直接随意放到一个模块中。三思而后行
  3. 服务之间只能依赖 flowerpot-xxx-service-common、flowerpot-xxx-service-api。
  4. 所有服务模块都应当遵守 common, api, dao, impl, autoconfigure, rpc, web 分包 （按需而立）
+ 5. 普通方法(保存，更新，删除，详情【并不是必须的，一般复炸结构才需要】，记录) 对应方法命名(save, update, delete, detail, get)
     
 ### 技术栈
 #### 后端技术

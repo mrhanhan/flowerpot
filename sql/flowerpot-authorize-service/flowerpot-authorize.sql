@@ -69,7 +69,7 @@ create table if not exists `ac_auth_resource_rule`
 (
     `id`          bigint(20) primary key comment 'ID',
     `resource_id` bigint(20)   not null comment '受权资源ID',
-    `type`   int          not null comment '规则类型：权限码，角色，等等',
+    `type`        int          not null comment '规则类型：权限码，角色，等等',
     `expression`  varchar(512) not null comment '表达式，可以是权限码',
     `desc`        varchar(255)          default '' comment '描述',
     `create_time` datetime     not null default current_timestamp comment '创建时间',
@@ -111,7 +111,39 @@ create table if not exists `ac_role_tree`
     `modify_by`   bigint(20)          default 0 comment '修改人',
     `effective`   tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
 ) comment '角色树形表';
-
+/**
+  角色和权限的关系
+ */
+-- drop table if exists `ac_role_auth_resource`;
+create table if not exists `ac_role_auth_resource`
+(
+    `id`          bigint(20) primary key comment 'ID',
+    `role_id`     bigint(20)  not null comment '关联角色的ID',
+    `auth_id`     bigint(20)  not null comment '资源ID',
+    `auth_code`   varchar(32) not null comment '资源编码',
+    `create_time` datetime    not null default current_timestamp comment '创建时间',
+    `create_by`   bigint(20)           default 0 comment '创建人',
+    `modify_time` datetime             default current_timestamp comment '修改时间',
+    `modify_by`   bigint(20)           default 0 comment '修改人',
+    `effective`   tinyint     not null default 1 comment '是否是有效的记录 1 有效 0 无效'
+) comment '角色权限表';
+/**
+  角色关联表
+  用户、身份、关联角色的关系表
+ */
+-- drop table if exists `ac_role_associate`
+create table if not exists `ac_role_associate`
+(
+    `id`          bigint(20) primary key comment 'ID',
+    `role_id`     bigint(20) not null comment '关联角色的ID',
+    `type`        int        not null comment '关系类型 用户、身份 RoleAssociateTypeEnum',
+    `target_id`   bigint(20) not null comment '关联的目标ID',
+    `create_time` datetime   not null default current_timestamp comment '创建时间',
+    `create_by`   bigint(20)          default 0 comment '创建人',
+    `modify_time` datetime            default current_timestamp comment '修改时间',
+    `modify_by`   bigint(20)          default 0 comment '修改人',
+    `effective`   tinyint    not null default 1 comment '是否是有效的记录 1 有效 0 无效'
+) comment '角色权限表';
 /**
   身份表
   用户可以拥有多个身份
