@@ -1,6 +1,6 @@
-package com.flowerpot.service.storage.dto;
+package com.flowerpot.storage.dto;
 
-import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
+import com.flowerpot.storage.enums.StoreDeviceSupplierEnum;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

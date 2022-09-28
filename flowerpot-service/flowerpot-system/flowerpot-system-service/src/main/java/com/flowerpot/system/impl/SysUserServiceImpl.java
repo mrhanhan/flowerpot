@@ -1,4 +1,4 @@
-package com.flowerpot.service.system.impl;
+package com.flowerpot.system.impl;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -8,21 +8,21 @@ import com.flowerpot.common.utils.Model;
 import com.flowerpot.common.utils.UniqueCodeGen;
 import com.flowerpot.common.utils.template.TemplateResolve;
 import com.flowerpot.common.utils.text.PasswordUtils;
+import com.flowerpot.mailbox.utils.EmailMessageBoBuilder;
+import com.flowerpot.mailbox.utils.EmailMessageFactory;
 import com.flowerpot.service.mailbox.dto.EmailMessageBo;
-import com.flowerpot.service.mailbox.service.MailboxService;
+import com.flowerpot.mailbox.service.MailboxService;
 import com.flowerpot.service.mailbox.enums.EmailBusinessTypeEnum;
 import com.flowerpot.service.mailbox.enums.EmailContentTypeEnum;
 import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;
-import com.flowerpot.service.mailbox.utils.EmailMessageBoBuilder;
-import com.flowerpot.service.mailbox.utils.EmailMessageFactory;
-import com.flowerpot.service.system.service.SysUserInfoService;
-import com.flowerpot.service.system.service.SysUserService;
-import com.flowerpot.service.system.dto.SysUserDto;
-import com.flowerpot.service.system.entity.SysUser;
-import com.flowerpot.service.system.entity.SysUserInfo;
-import com.flowerpot.service.system.constant.EmailTemplateNameConstant;
-import com.flowerpot.service.system.constant.EmailTitleConstant;
-import com.flowerpot.service.system.mapper.SysUserMapper;
+import com.flowerpot.system.service.SysUserInfoService;
+import com.flowerpot.system.service.SysUserService;
+import com.flowerpot.system.dto.SysUserDto;
+import com.flowerpot.system.entity.SysUser;
+import com.flowerpot.system.entity.SysUserInfo;
+import com.flowerpot.system.constant.EmailTemplateNameConstant;
+import com.flowerpot.system.constant.EmailTitleConstant;
+import com.flowerpot.system.mapper.SysUserMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

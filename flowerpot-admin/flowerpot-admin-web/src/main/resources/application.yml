@@ -1,25 +1,27 @@
 server:
   port: 7082
+
+
+
 spring:
   application:
     name: flowerpot-admin-web
-
   # 数据源
   datasource:
     url: jdbc:mysql://www.rick.server:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    schema:
-      - classpath:flowerpot-system.sql
-      - classpath*:flowerpot-mailbox.sql
-      - classpath*:flowerpot-storage.sql
-      - classpath*:flowerpot-authorize.sql
-    initialization-mode: always # 打开这个才会执行上面所创建的SQL
     hikari:
       max-lifetime: 40000
-
-
+  sql:
+    init:
+      schema-locations:
+        - classpath:flowerpot-system.sql
+        - classpath*:flowerpot-mailbox.sql
+        - classpath*:flowerpot-storage.sql
+        - classpath*:flowerpot-authorize.sql
+      mode: always
 # Mybatis Plus
 mybatis-plus:
   global-config:
@@ -33,3 +35,16 @@ mybatis-plus:
 
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    root: info
+
+debug: false
+management:
+  endpoint:
+    health:
+      enabled: false
+springfox:
+  documentation:
+#    先停用Swagger
+    enabled: false

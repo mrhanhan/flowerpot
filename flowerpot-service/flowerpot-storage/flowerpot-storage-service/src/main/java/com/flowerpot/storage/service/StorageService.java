@@ -1,7 +1,7 @@
-package com.flowerpot.service.storage.service;
+package com.flowerpot.storage.service;
 
-import com.flowerpot.service.storage.dto.StoreFileBo;
-import com.flowerpot.service.storage.dto.StoreFileResultDto;
+import com.flowerpot.storage.dto.StoreFileBo;
+import com.flowerpot.storage.dto.StoreFileResultDto;
 
 import java.io.InputStream;
 

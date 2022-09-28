@@ -1,14 +1,14 @@
-package com.flowerpot.service.storage.impl;
+package com.flowerpot.storage.impl;
 
 import com.flowerpot.common.utils.EnumUtil;
 import com.flowerpot.common.utils.config.ConfigTemplate;
 import com.flowerpot.common.utils.convert.TextConvertUtil;
-import com.flowerpot.service.storage.entity.StoreDevice;
-import com.flowerpot.service.storage.enums.StorageServiceConstructEnum;
-import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
-import com.flowerpot.service.storage.service.StorageService;
-import com.flowerpot.service.storage.service.StorageServiceProvider;
-import com.flowerpot.service.storage.service.StoreDeviceService;
+import com.flowerpot.storage.entity.StoreDevice;
+import com.flowerpot.storage.enums.StorageServiceConstructEnum;
+import com.flowerpot.storage.enums.StoreDeviceSupplierEnum;
+import com.flowerpot.storage.service.StorageService;
+import com.flowerpot.storage.service.StorageServiceProvider;
+import com.flowerpot.storage.service.StoreDeviceService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

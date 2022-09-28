@@ -1,4 +1,4 @@
-package com.flowerpot.admin.common.constant;
+package com.flowerpot.common.constant;
 
 /**
  * CommonMessageConstant

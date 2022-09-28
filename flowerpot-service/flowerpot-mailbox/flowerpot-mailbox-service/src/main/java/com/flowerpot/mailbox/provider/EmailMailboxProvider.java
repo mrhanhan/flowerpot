@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.provider;
+package com.flowerpot.mailbox.provider;
 
 import com.flowerpot.service.mailbox.dto.EmailMessageBo;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;

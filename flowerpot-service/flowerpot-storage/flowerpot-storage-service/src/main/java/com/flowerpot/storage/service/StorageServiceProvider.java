@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.service;
+package com.flowerpot.storage.service;
 
 /**
  * StorageServiceProvider

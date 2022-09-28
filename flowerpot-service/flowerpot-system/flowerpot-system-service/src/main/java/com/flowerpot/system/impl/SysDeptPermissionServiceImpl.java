@@ -1,10 +1,10 @@
-package com.flowerpot.service.system.impl;
+package com.flowerpot.system.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.system.service.SysDeptPermissionService;
-import com.flowerpot.service.system.entity.SysDeptPermission;
-import com.flowerpot.service.system.mapper.SysDeptPermissionMapper;
+import com.flowerpot.system.service.SysDeptPermissionService;
+import com.flowerpot.system.entity.SysDeptPermission;
+import com.flowerpot.system.mapper.SysDeptPermissionMapper;
 import org.springframework.stereotype.Service;
 
 /**

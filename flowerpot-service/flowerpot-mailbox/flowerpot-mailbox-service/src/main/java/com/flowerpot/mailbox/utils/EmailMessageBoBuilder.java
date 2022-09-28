@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.utils;
+package com.flowerpot.mailbox.utils;
 
 import com.flowerpot.common.utils.Builder;
 import com.flowerpot.common.utils.UniqueCodeGen;

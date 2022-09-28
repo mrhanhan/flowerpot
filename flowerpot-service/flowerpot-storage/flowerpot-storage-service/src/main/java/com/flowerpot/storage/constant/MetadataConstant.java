@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.constant;
+package com.flowerpot.storage.constant;
 
 /**
  * MetadataConstant

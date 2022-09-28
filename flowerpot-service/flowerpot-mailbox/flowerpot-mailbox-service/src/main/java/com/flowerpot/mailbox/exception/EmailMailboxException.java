@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.exception;
+package com.flowerpot.mailbox.exception;
 
 /**
  * EmailMailboxException

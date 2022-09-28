@@ -16,7 +16,14 @@
         <!-- Mail Common -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-mailbox-common</artifactId>
+            <artifactId>flowerpot-mailbox-service</artifactId>
+        </dependency>
+
+        <!-- Web  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

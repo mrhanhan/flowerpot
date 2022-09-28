@@ -1,6 +1,6 @@
-package com.flowerpot.service.storage.impl;
+package com.flowerpot.storage.impl;
 
-import com.flowerpot.service.storage.service.StorageService;
+import com.flowerpot.storage.service.StorageService;
 import lombok.AccessLevel;
 import lombok.Setter;
 

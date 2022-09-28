@@ -1,8 +1,8 @@
 package com.flowerpot.authorize.controller;
 
 import com.flowerpot.authorize.entity.AuthResourceGroup;
+import com.flowerpot.authorize.service.AuthResourceGroupService;
 import com.flowerpot.common.Result;
-import com.flowerpot.service.authorize.service.AuthResourceGroupService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.dto;
+package com.flowerpot.storage.dto;
 
 import com.flowerpot.common.utils.config.ConfigTemplate;
 import com.flowerpot.common.utils.config.annotation.Input;

@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.service;
+package com.flowerpot.mailbox.service;
 
 import com.flowerpot.service.mailbox.dto.EmailMessageBo;
 

@@ -1,12 +1,12 @@
-package com.flowerpot.service.mailbox.impl;
+package com.flowerpot.mailbox.impl;
 
 import com.flowerpot.common.model.BaseServiceImpl;
 import com.flowerpot.common.utils.UniqueCodeGen;
 import com.flowerpot.common.utils.collection.CollectionUtil;
+import com.flowerpot.mailbox.mapper.EmailMailboxMapper;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;
 import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;
-import com.flowerpot.service.mailbox.mapper.EmailMailboxMapper;
-import com.flowerpot.service.mailbox.service.EmailMailboxService;
+import com.flowerpot.mailbox.service.EmailMailboxService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

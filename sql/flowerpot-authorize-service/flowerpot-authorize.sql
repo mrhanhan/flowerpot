@@ -1,7 +1,7 @@
 /**
   数据库
  */
-
+use flowerpot;
 -- # create database flowerpot char set utf8mb4;
 --
 -- use flowerpot;

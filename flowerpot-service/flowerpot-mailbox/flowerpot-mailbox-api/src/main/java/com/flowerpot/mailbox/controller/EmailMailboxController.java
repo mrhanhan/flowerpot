@@ -1,17 +1,14 @@
-package com.flowerpot.admin.modules.mailbox.controller;
+package com.flowerpot.mailbox.controller;
 
-import com.flowerpot.admin.modules.base.BaseController;
+
+import com.flowerpot.common.BaseController;
 import com.flowerpot.common.Result;
+import com.flowerpot.common.utils.Assert;
+import com.flowerpot.mailbox.service.EmailMailboxService;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;
-import com.flowerpot.service.mailbox.service.EmailMailboxService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.util.Assert;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;

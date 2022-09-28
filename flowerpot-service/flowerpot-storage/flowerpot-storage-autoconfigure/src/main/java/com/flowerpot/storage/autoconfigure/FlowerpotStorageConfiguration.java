@@ -1,8 +1,8 @@
 package com.flowerpot.storage.autoconfigure;
 
-import com.flowerpot.service.storage.impl.StorageServiceProviderImpl;
-import com.flowerpot.service.storage.service.StorageServiceProvider;
-import com.flowerpot.service.storage.service.StoreDeviceService;
+import com.flowerpot.storage.impl.StorageServiceProviderImpl;
+import com.flowerpot.storage.service.StorageServiceProvider;
+import com.flowerpot.storage.service.StoreDeviceService;
 import org.springframework.context.annotation.Bean;
 
 /**

@@ -1,10 +1,10 @@
-package com.flowerpot.service.system.impl;
+package com.flowerpot.system.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.system.service.SysDeptService;
-import com.flowerpot.service.system.entity.SysDept;
-import com.flowerpot.service.system.mapper.SysDeptMapper;
+import com.flowerpot.system.service.SysDeptService;
+import com.flowerpot.system.entity.SysDept;
+import com.flowerpot.system.mapper.SysDeptMapper;
 import org.springframework.stereotype.Service;
 
 /**

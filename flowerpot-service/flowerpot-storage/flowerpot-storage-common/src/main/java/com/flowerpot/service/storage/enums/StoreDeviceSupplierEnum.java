@@ -1,9 +1,9 @@
-package com.flowerpot.service.storage.enums;
+package com.flowerpot.storage.enums;
 
 import com.flowerpot.common.KeyProvider;
 import com.flowerpot.common.utils.config.ConfigTemplate;
-import com.flowerpot.service.storage.dto.AliCloudOssStorageProperties;
-import com.flowerpot.service.storage.dto.LocalStorageProperties;
+import com.flowerpot.storage.dto.AliCloudOssStorageProperties;
+import com.flowerpot.storage.dto.LocalStorageProperties;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

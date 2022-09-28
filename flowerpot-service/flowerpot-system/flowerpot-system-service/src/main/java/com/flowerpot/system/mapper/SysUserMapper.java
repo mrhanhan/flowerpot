@@ -1,10 +1,10 @@
-package com.flowerpot.service.system.mapper;
+package com.flowerpot.system.mapper;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.flowerpot.common.model.BaseMapper;
-import com.flowerpot.service.system.dto.SysUserDto;
-import com.flowerpot.service.system.entity.SysUser;
+import com.flowerpot.system.dto.SysUserDto;
+import com.flowerpot.system.entity.SysUser;
 import org.apache.ibatis.annotations.Param;
 
 /**

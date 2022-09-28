@@ -16,6 +16,11 @@
         <dependency>
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-authorize-common</artifactId>
+        </dependency>
+        <!-- Mybatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>

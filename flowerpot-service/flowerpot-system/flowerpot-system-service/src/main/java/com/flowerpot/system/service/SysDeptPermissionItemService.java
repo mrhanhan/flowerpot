@@ -1,7 +1,7 @@
 package com.flowerpot.system.service;
 
 import com.flowerpot.common.model.BaseService;
-import com.flowerpot.service.system.entity.SysDeptPermissionItem;
+import com.flowerpot.system.entity.SysDeptPermissionItem;
 
 /**
  * @author Mrhan

@@ -1,7 +1,7 @@
-package com.flowerpot.service.storage.dto;
+package com.flowerpot.storage.dto;
 
-import com.flowerpot.service.storage.entity.StoreFile;
-import com.flowerpot.service.storage.utils.StoreFileFactory;
+import com.flowerpot.storage.entity.StoreFile;
+import com.flowerpot.storage.utils.StoreFileFactory;
 import lombok.Data;
 
 /**

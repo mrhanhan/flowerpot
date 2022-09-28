@@ -1,4 +1,5 @@
-package com.flowerpot.service.mailbox.provider;
+package com.flowerpot.mailbox.provider;
+
 
 import com.flowerpot.service.mailbox.entity.EmailMailbox;
 import org.springframework.mail.MailSender;

@@ -1,6 +1,6 @@
-package com.flowerpot.service.mailbox.provider.impl;
+package com.flowerpot.mailbox.provider.impl;
 
-import com.flowerpot.service.mailbox.provider.EmailMessageSenderProvider;
+import com.flowerpot.mailbox.provider.EmailMessageSenderProvider;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

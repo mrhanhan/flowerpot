@@ -1,5 +1,6 @@
 package com.flowerpot.service.mailbox.entity;
 
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.flowerpot.common.model.BaseEntity;

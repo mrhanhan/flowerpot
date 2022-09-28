@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.mapper;
+package com.flowerpot.mailbox.mapper;
 
 import com.flowerpot.common.model.BaseMapper;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;

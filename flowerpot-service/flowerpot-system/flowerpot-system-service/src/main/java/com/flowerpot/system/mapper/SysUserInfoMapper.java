@@ -1,7 +1,7 @@
-package com.flowerpot.service.system.mapper;
+package com.flowerpot.system.mapper;
 
 import com.flowerpot.common.model.BaseMapper;
-import com.flowerpot.service.system.entity.SysUserInfo;
+import com.flowerpot.system.entity.SysUserInfo;
 
 /**
  * @author Mrhan

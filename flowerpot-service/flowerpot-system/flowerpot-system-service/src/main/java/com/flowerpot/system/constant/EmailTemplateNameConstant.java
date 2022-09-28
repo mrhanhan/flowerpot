@@ -1,4 +1,4 @@
-package com.flowerpot.service.system.constant;
+package com.flowerpot.system.constant;
 
 /**
  * EmailTemplateConstant

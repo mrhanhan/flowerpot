@@ -1,6 +1,7 @@
 package com.flowerpot.authorize.constant;
 
-import com.flowerpot.admin.common.constant.CommonMessageConstant;
+
+import com.flowerpot.common.constant.CommonMessageConstant;
 
 /**
  * AuthorizeMessageConstant

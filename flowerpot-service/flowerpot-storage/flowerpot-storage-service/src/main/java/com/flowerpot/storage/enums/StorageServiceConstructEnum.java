@@ -1,8 +1,8 @@
-package com.flowerpot.service.storage.enums;
+package com.flowerpot.storage.enums;
 
 import com.flowerpot.common.KeyProvider;
 import com.flowerpot.common.utils.config.ConfigTemplate;
-import com.flowerpot.service.storage.service.StorageService;
+import com.flowerpot.storage.service.StorageService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -16,10 +16,10 @@ import java.util.function.Function;
  */
 @Getter
 @RequiredArgsConstructor
-public enum StorageServiceConstructEnum implements KeyProvider<StoreDeviceSupplierEnum> {
+public enum StorageServiceConstructEnum implements KeyProvider<com.flowerpot.storage.enums.StoreDeviceSupplierEnum> {
 
     ;
 
-    private final StoreDeviceSupplierEnum key;
+    private final com.flowerpot.storage.enums.StoreDeviceSupplierEnum key;
     private final Function<ConfigTemplate, StorageService> construct;
 }

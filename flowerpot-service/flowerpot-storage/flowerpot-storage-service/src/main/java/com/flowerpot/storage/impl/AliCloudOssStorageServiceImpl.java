@@ -1,13 +1,13 @@
-package com.flowerpot.service.storage.impl;
+package com.flowerpot.storage.impl;
 
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.OSSObject;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectRequest;
-import com.flowerpot.service.storage.constant.MetadataConstant;
-import com.flowerpot.service.storage.dto.StoreFileBo;
-import com.flowerpot.service.storage.dto.StoreFileResultDto;
-import com.flowerpot.service.storage.service.StorageService;
+import com.flowerpot.storage.constant.MetadataConstant;
+import com.flowerpot.storage.dto.StoreFileBo;
+import com.flowerpot.storage.dto.StoreFileResultDto;
+import com.flowerpot.storage.service.StorageService;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.InputStream;

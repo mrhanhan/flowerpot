@@ -1,6 +1,7 @@
 package com.flowerpot.common.model;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,8 +21,7 @@ public class BaseEntity implements Serializable {
     /**
      * ID
      */
-    @TableField(fill = FieldFill.INSERT)
-    @TableId
+    @TableId(type = IdType.INPUT)
     private Long id;
 
     /**

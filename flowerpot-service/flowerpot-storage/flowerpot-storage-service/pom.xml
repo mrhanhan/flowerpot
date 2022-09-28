@@ -15,8 +15,16 @@
         <!-- Storage Service -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-storage-service</artifactId>
+            <artifactId>flowerpot-storage-common</artifactId>
         </dependency>
+
+        <!-- Mybatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Ali yun Oss -->
         <dependency>
             <groupId>com.aliyun.oss</groupId>

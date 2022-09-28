@@ -1,7 +1,7 @@
-package com.flowerpot.service.storage.utils;
+package com.flowerpot.storage.utils;
 
-import com.flowerpot.service.storage.dto.StoreFileBo;
-import com.flowerpot.service.storage.enums.StoreDeviceSupplierEnum;
+import com.flowerpot.storage.dto.StoreFileBo;
+import com.flowerpot.storage.enums.StoreDeviceSupplierEnum;
 import lombok.SneakyThrows;
 
 import java.io.File;

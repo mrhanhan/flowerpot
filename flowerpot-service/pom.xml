@@ -45,7 +45,6 @@
         <dependency>
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-common</artifactId>
-            <optional>true</optional>
         </dependency>
         <!-- Swagger -->
         <dependency>

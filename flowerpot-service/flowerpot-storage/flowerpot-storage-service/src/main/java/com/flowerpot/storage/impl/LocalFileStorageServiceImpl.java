@@ -1,9 +1,9 @@
-package com.flowerpot.service.storage.impl;
+package com.flowerpot.storage.impl;
 
 import com.flowerpot.common.utils.IoUtil;
-import com.flowerpot.service.storage.dto.StoreFileBo;
-import com.flowerpot.service.storage.dto.StoreFileResultDto;
-import com.flowerpot.service.storage.service.StorageService;
+import com.flowerpot.storage.dto.StoreFileBo;
+import com.flowerpot.storage.dto.StoreFileResultDto;
+import com.flowerpot.storage.service.StorageService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 

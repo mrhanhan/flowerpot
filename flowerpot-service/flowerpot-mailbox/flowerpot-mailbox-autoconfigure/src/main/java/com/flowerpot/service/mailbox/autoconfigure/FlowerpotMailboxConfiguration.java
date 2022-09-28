@@ -1,9 +1,8 @@
 package com.flowerpot.service.mailbox.autoconfigure;
 
-import com.flowerpot.service.mailbox.provider.EmailMessageSenderProvider;
-import com.flowerpot.service.mailbox.provider.impl.EmailMessageSenderProviderImpl;
+import com.flowerpot.mailbox.provider.EmailMessageSenderProvider;
+import com.flowerpot.mailbox.provider.impl.EmailMessageSenderProviderImpl;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * FlowerpotMailboxConfiguration

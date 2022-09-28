@@ -2,7 +2,7 @@ package com.flowerpot.system.service;
 
 
 import com.flowerpot.common.model.BaseService;
-import com.flowerpot.service.system.entity.SysDept;
+import com.flowerpot.system.entity.SysDept;
 
 /**
  * @author Mrhan

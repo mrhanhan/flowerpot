@@ -18,12 +18,18 @@
         <!-- Flowerpot System Service Api -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-system-service</artifactId>
+            <artifactId>flowerpot-system-common</artifactId>
         </dependency>
         <!-- 依赖邮箱模块 -->
         <dependency>
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-mailbox-service</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Mybatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>

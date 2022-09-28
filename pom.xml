@@ -43,27 +43,29 @@
         <flowerpot.authorize.version>1.0.0</flowerpot.authorize.version>
         <!-- 依赖管理 版本号 End -->
 
-        <springfox.version>2.9.2</springfox.version>
-        <jwt.version>3.10.3</jwt.version>
-        <fastjson.version>1.2.70</fastjson.version>
+        <springfox.version>3.0.0</springfox.version>
+        <jwt.version>4.0.0</jwt.version>
+        <fastjson.version>2.0.14</fastjson.version>
 
-        <spring.boot.version>2.3.2.RELEASE</spring.boot.version>
-        <spring.cloud.version>Hoxton.SR6</spring.cloud.version>
+        <spring.boot.version>2.6.11</spring.boot.version>
+        <spring.cloud.version>2021.0.4</spring.cloud.version>
 
         <lombok.version>1.18.16</lombok.version>
         <common.lang3.version>3.11</common.lang3.version>
-        <mybatis.plus.version>3.3.2</mybatis.plus.version>
-        <druid.version>1.1.21</druid.version>
+        <mybatis.plus.version>3.5.2</mybatis.plus.version>
+        <druid.version>1.2.12</druid.version>
 
-        <hutool.version>5.3.7</hutool.version>
+        <hutool.version>5.8.8</hutool.version>
+        <guava.version>20.0</guava.version>
         <!-- 模板版本 -->
         <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
         <freemarker.version>2.3.30</freemarker.version>
 
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <!-- 管理依赖 -->
     <dependencyManagement>
         <dependencies>
@@ -136,6 +138,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
             <!-- Lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -190,19 +197,8 @@
             <!-- 文档 Swagger -->
             <dependency>
                 <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
+                <artifactId>springfox-boot-starter</artifactId>
                 <version>${springfox.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox.version}</version>
-            </dependency>
-            <!-- Swagger Ui -->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>1.9.6</version>
             </dependency>
 
             <!-- hutool -->
@@ -232,6 +228,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

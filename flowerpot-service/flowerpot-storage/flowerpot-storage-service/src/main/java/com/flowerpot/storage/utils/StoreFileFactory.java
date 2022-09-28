@@ -1,8 +1,8 @@
-package com.flowerpot.service.storage.utils;
+package com.flowerpot.storage.utils;
 
-import com.flowerpot.service.storage.dto.StoreFileBo;
-import com.flowerpot.service.storage.entity.StoreFile;
-import com.flowerpot.service.storage.entity.StoreFileAttribute;
+import com.flowerpot.storage.dto.StoreFileBo;
+import com.flowerpot.storage.entity.StoreFile;
+import com.flowerpot.storage.entity.StoreFileAttribute;
 import lombok.experimental.UtilityClass;
 import org.springframework.util.CollectionUtils;
 

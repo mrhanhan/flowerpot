@@ -1,4 +1,4 @@
-package com.flowerpot.service.mailbox.utils;
+package com.flowerpot.mailbox.utils;
 
 import com.flowerpot.service.mailbox.enums.EmailBusinessTypeEnum;
 import com.flowerpot.service.mailbox.enums.EmailMailboxEnum;

@@ -1,6 +1,5 @@
 package com.flowerpot.common;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
 
 /**
  * BaseController
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
  * @author Mrhan
  * @date 2021/3/20 11:16
  */
-@ControllerAdvice
 public class BaseController {
 
 

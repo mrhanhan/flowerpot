@@ -1,12 +1,12 @@
-package com.flowerpot.service.system.impl;
+package com.flowerpot.system.impl;
 
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.system.service.SysUserInfoService;
-import com.flowerpot.service.system.entity.SysUserInfo;
-import com.flowerpot.service.system.mapper.SysUserInfoMapper;
+import com.flowerpot.system.service.SysUserInfoService;
+import com.flowerpot.system.entity.SysUserInfo;
+import com.flowerpot.system.mapper.SysUserInfoMapper;
 import org.springframework.stereotype.Service;
 
 /**

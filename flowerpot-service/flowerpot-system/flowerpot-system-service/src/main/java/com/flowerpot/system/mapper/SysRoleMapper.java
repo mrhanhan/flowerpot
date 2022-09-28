@@ -1,8 +1,8 @@
-package com.flowerpot.service.system.mapper;
+package com.flowerpot.system.mapper;
 
 
 import com.flowerpot.common.model.BaseMapper;
-import com.flowerpot.service.system.entity.SysRole;
+import com.flowerpot.system.entity.SysRole;
 
 /**
  * @author Mrhan

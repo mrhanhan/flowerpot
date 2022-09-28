@@ -48,6 +48,6 @@ public class BaseServiceImpl<T extends BaseEntity, M extends BaseMapper<T>> exte
 
     @Override
     protected Class<T> currentModelClass() {
-        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), 0);
+        return (Class<T>) ReflectionKit.getSuperClassGenericType(getClass(), BaseServiceImpl.class, 0);
     }
 }

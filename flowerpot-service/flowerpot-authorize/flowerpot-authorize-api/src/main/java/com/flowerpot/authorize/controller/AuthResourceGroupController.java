@@ -1,15 +1,16 @@
 package com.flowerpot.authorize.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.flowerpot.authorize.constant.AuthorizeMessageConstant;
 import com.flowerpot.authorize.entity.AuthResourceGroup;
 import com.flowerpot.authorize.enums.AuthSystemEnum;
-import com.flowerpot.authorize.constant.AuthorizeMessageConstant;
-import com.flowerpot.common.PageRequest;
-import com.flowerpot.common.PageResult;
-import com.flowerpot.common.Result;
-import com.flowerpot.common.VerifyForm;
+import com.flowerpot.authorize.service.AuthResourceGroupService;
+import com.flowerpot.common.*;
 import com.flowerpot.common.utils.Assert;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 

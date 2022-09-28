@@ -1,10 +1,10 @@
-package com.flowerpot.service.storage.impl;
+package com.flowerpot.storage.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.storage.mapper.StoreFileAttributeMapper;
-import com.flowerpot.service.storage.entity.StoreFileAttribute;
-import com.flowerpot.service.storage.service.StoreFileAttributeService;
+import com.flowerpot.storage.mapper.StoreFileAttributeMapper;
+import com.flowerpot.storage.entity.StoreFileAttribute;
+import com.flowerpot.storage.service.StoreFileAttributeService;
 import org.springframework.stereotype.Service;
 
 /**

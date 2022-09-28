@@ -2,7 +2,7 @@ package com.flowerpot.storage.mapper;
 
 
 import com.flowerpot.common.model.BaseMapper;
-import com.flowerpot.service.storage.entity.StoreDevice;
+import com.flowerpot.storage.entity.StoreDevice;
 
 /**
  *@author Mrhan

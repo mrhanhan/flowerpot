@@ -1,4 +1,4 @@
-package com.flowerpot.service.storage.enums;
+package com.flowerpot.storage.enums;
 
 import com.flowerpot.common.KeyDescProvider;
 import lombok.Getter;

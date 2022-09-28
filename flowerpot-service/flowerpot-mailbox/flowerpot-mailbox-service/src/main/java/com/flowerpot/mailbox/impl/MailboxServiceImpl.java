@@ -1,16 +1,16 @@
-package com.flowerpot.service.mailbox.impl;
+package com.flowerpot.mailbox.impl;
+
 
 import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import com.flowerpot.common.model.BaseEntity;
 import com.flowerpot.common.utils.Assert;
-import com.flowerpot.service.mailbox.dto.EmailMessageBo;
-import com.flowerpot.service.mailbox.exception.EmailMailboxException;
-import com.flowerpot.service.mailbox.provider.EmailMailboxProvider;
-import com.flowerpot.service.mailbox.provider.EmailMessageSenderProvider;
-import com.flowerpot.service.mailbox.service.EmailMailboxService;
-import com.flowerpot.service.mailbox.service.EmailMessageContentService;
-import com.flowerpot.service.mailbox.service.EmailMessageService;
-import com.flowerpot.service.mailbox.service.MailboxService;
+import com.flowerpot.mailbox.exception.EmailMailboxException;
+import com.flowerpot.mailbox.provider.EmailMailboxProvider;
+import com.flowerpot.mailbox.provider.EmailMessageSenderProvider;
+import com.flowerpot.mailbox.service.EmailMailboxService;
+import com.flowerpot.mailbox.service.EmailMessageContentService;
+import com.flowerpot.mailbox.service.EmailMessageService;
+import com.flowerpot.mailbox.service.MailboxService;
 import com.flowerpot.service.mailbox.entity.EmailMailbox;
 import com.flowerpot.service.mailbox.entity.EmailMessage;
 import com.flowerpot.service.mailbox.entity.EmailMessageContent;
@@ -56,7 +56,7 @@ public class MailboxServiceImpl implements MailboxService {
     private List<EmailMailboxProvider> emailMailboxProviderList;
 
     @Override
-    public void sendEmail(EmailMessageBo message) {
+    public void sendEmail(com.flowerpot.service.mailbox.dto.EmailMessageBo message) {
         // 获取电子邮件
         EmailMailbox emailMailbox = getEmailMailbox(message);
         // 保存对象数据
@@ -88,7 +88,7 @@ public class MailboxServiceImpl implements MailboxService {
      * @param message       电子邮件消息
      */
     @Transactional(rollbackFor = Exception.class)
-    public void saveEmailData(EmailMailbox emailMailbox, EmailMessageBo message) {
+    public void saveEmailData(EmailMailbox emailMailbox, com.flowerpot.service.mailbox.dto.EmailMessageBo message) {
         EmailMessage emailMessage = message.getMessage();
         EmailMessageContent emailMessageContent = message.getContent();
         emailMessage.setMailboxId(emailMailbox.getId());
@@ -103,7 +103,7 @@ public class MailboxServiceImpl implements MailboxService {
      * @param emailMailbox  EmailMessageBox
      * @param message       消息
      */
-    private void sendMail(EmailMailbox emailMailbox, EmailMessageBo message) {
+    private void sendMail(EmailMailbox emailMailbox, com.flowerpot.service.mailbox.dto.EmailMessageBo message) {
         // 获取邮件发送服务
         MailSender sender = getMailSender(emailMailbox);
         // 邮件消息
@@ -122,7 +122,7 @@ public class MailboxServiceImpl implements MailboxService {
      * @param emailMailbox  电子邮件邮箱对象
      * @return          返回生成的邮件消息对象
      */
-    private SimpleMailMessage createSimpleMailMessage(EmailMessageBo message, EmailMailbox emailMailbox) {
+    private SimpleMailMessage createSimpleMailMessage(com.flowerpot.service.mailbox.dto.EmailMessageBo message, EmailMailbox emailMailbox) {
         EmailMessage emailMessage = message.getMessage();
         EmailMessageContent emailMessageContent = message.getContent();
 
@@ -153,7 +153,7 @@ public class MailboxServiceImpl implements MailboxService {
      * @param emailMessageBo 邮箱BO
      * @return 返回电子邮件邮箱对象
      */
-    private EmailMailbox getEmailMailbox(EmailMessageBo emailMessageBo) {
+    private EmailMailbox getEmailMailbox(com.flowerpot.service.mailbox.dto.EmailMessageBo emailMessageBo) {
         EmailMailbox mailbox = null;
         if (!CollectionUtils.isEmpty(emailMailboxProviderList)) {
             for (EmailMailboxProvider provider : emailMailboxProviderList) {

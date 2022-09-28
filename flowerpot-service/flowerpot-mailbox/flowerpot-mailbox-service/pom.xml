@@ -20,7 +20,18 @@
         <dependency>
             <groupId>com.flowerpot</groupId>
             <artifactId>flowerpot-mailbox-common</artifactId>
+        </dependency>
+        <!-- Javax mail -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
             <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Mybatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>

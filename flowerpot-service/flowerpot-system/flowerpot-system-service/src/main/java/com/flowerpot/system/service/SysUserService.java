@@ -3,8 +3,8 @@ package com.flowerpot.system.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.flowerpot.common.model.BaseService;
-import com.flowerpot.service.system.dto.SysUserDto;
-import com.flowerpot.service.system.entity.SysUser;
+import com.flowerpot.system.dto.SysUserDto;
+import com.flowerpot.system.entity.SysUser;
 
 /**
  * @author Mrhan

@@ -1,10 +1,10 @@
-package com.flowerpot.service.storage.impl;
+package com.flowerpot.storage.impl;
 
 
 import com.flowerpot.common.model.BaseServiceImpl;
-import com.flowerpot.service.storage.mapper.StoreDeviceMapper;
-import com.flowerpot.service.storage.entity.StoreDevice;
-import com.flowerpot.service.storage.service.StoreDeviceService;
+import com.flowerpot.storage.mapper.StoreDeviceMapper;
+import com.flowerpot.storage.entity.StoreDevice;
+import com.flowerpot.storage.service.StoreDeviceService;
 import org.springframework.stereotype.Service;
 
 /**
