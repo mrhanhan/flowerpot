@@ -24,22 +24,22 @@
         <!-- 系统服务模块 -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-system-service-impl</artifactId>
+            <artifactId>flowerpot-system-service</artifactId>
         </dependency>
         <!-- 邮箱服务自动配置 -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-mailbox-service-autoconfigure</artifactId>
+            <artifactId>flowerpot-mailbox-autoconfigure</artifactId>
         </dependency>
         <!-- 存储服务 -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-storage-service-autoconfigure</artifactId>
+            <artifactId>flowerpot-storage-autoconfigure</artifactId>
         </dependency>
         <!-- 受权服务 -->
         <dependency>
             <groupId>com.flowerpot</groupId>
-            <artifactId>flowerpot-authorize-service-impl</artifactId>
+            <artifactId>flowerpot-authorize-service</artifactId>
         </dependency>
         <!-- Spring Boot Starter Web -->
         <dependency>

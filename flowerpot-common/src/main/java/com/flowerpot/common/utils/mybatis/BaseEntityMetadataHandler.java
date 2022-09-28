@@ -48,7 +48,6 @@ public class BaseEntityMetadataHandler implements MetaObjectHandler {
     @SneakyThrows
     private void fillInsertData(BaseEntity originalObject) {
 
-        Field[] declaredFields = originalObject.getClass().getDeclaredFields();
         // 设置ID
         if (Objects.isNull(originalObject.getId())) {
             originalObject.setId(UniqueCodeGen.genId());

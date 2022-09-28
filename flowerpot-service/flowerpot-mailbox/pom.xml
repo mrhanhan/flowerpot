@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>flowerpot-service</artifactId>
+        <groupId>com.flowerpot</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <packaging>pom</packaging>
+
+    <!-- 子模块 -->
+    <modules>
+        <module>flowerpot-mailbox-common</module>
+        <module>flowerpot-mailbox-api</module>
+        <module>flowerpot-mailbox-service</module>
+        <module>flowerpot-mailbox-autoconfigure</module>
+    </modules>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>flowerpot-mailbox</artifactId>
+
+    <properties>
+        <flowerpot.mailbox.common.version>1.0.0</flowerpot.mailbox.common.version>
+        <flowerpot.mailbox.api.version>1.0.0</flowerpot.mailbox.api.version>
+        <flowerpot.mailbox.service.version>1.0.0</flowerpot.mailbox.service.version>
+        <flowerpot.mailbox.autoconfigure.version>1.0.0</flowerpot.mailbox.autoconfigure.version>
+
+        <!-- javax mail-->
+        <javax.mail.version>1.6.2</javax.mail.version>
+        <spring.boot.mail.version>2.1.7.RELEASE</spring.boot.mail.version>
+
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Mailbox Common -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-common</artifactId>
+                <version>${flowerpot.mailbox.common.version}</version>
+            </dependency>
+            <!-- Mailbox Api -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-api</artifactId>
+                <version>${flowerpot.mailbox.api.version}</version>
+            </dependency>
+            <!-- Mailbox Service -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-service</artifactId>
+                <version>${flowerpot.mailbox.service.version}</version>
+            </dependency>
+            <!-- Mailbox Auto Configuration -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox-autoconfigure</artifactId>
+                <version>${flowerpot.mailbox.autoconfigure.version}</version>
+            </dependency>
+
+            <!-- JavaX Mail -->
+<!--            <dependency>-->
+<!--                <groupId>com.sun.mail</groupId>-->
+<!--                <artifactId>javax.mail</artifactId>-->
+<!--                <version>${javax.mail.version}</version>-->
+<!--            </dependency>-->
+<!--            -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${spring.boot.mail.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

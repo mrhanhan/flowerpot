@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>flowerpot-service</artifactId>
+        <groupId>com.flowerpot</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>flowerpot-system</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        花盆系统模块
+    </description>
+    <modules>
+        <module>flowerpot-system-common</module>
+        <module>flowerpot-system-api</module>
+        <module>flowerpot-system-service</module>
+    </modules>
+
+    <properties>
+
+        <flowerpot.system.common.version>1.0.0</flowerpot.system.common.version>
+        <flowerpot.system.api.version>1.0.0</flowerpot.system.api.version>
+        <flowerpot.system.service.version>1.0.0</flowerpot.system.service.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- System Service Common -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-system-common</artifactId>
+                <version>${flowerpot.system.common.version}</version>
+            </dependency>
+
+            <!-- System Service Api -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-system-api</artifactId>
+                <version>${flowerpot.system.api.version}</version>
+            </dependency>
+
+            <!-- System Service Impl -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-system-service</artifactId>
+                <version>${flowerpot.system.service.version}</version>
+            </dependency>
+
+            <!-- 邮箱模块 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-mailbox</artifactId>
+                <version>${flowerpot.mailbox.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- 受权服务 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-authorize</artifactId>
+                <version>${flowerpot.authorize.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- 存储服务 -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-storage</artifactId>
+                <version>${flowerpot.storage.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

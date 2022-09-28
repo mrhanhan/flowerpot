@@ -6,7 +6,7 @@ spring:
 
   # 数据源
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://www.rick.server:3306/flowerpot?useSSL=true&characterEncoding=utf8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
@@ -16,6 +16,8 @@ spring:
       - classpath*:flowerpot-storage.sql
       - classpath*:flowerpot-authorize.sql
     initialization-mode: always # 打开这个才会执行上面所创建的SQL
+    hikari:
+      max-lifetime: 40000
 
 
 # Mybatis Plus

@@ -34,13 +34,13 @@
 
         <!-- 依赖管理 版本号 Start -->
         <!-- 系统服务 POM -->
-        <flowerpot.system.service.version>1.0.0</flowerpot.system.service.version>
+        <flowerpot.system.version>1.0.0</flowerpot.system.version>
         <!-- 邮箱服务 POM -->
-        <flowerpot.mailbox.service.version>1.0.0</flowerpot.mailbox.service.version>
+        <flowerpot.mailbox.version>1.0.0</flowerpot.mailbox.version>
         <!-- 存储服务 POM -->
-        <flowerpot.storage.service.version>1.0.0</flowerpot.storage.service.version>
+        <flowerpot.storage.version>1.0.0</flowerpot.storage.version>
         <!-- 授权服务 POM -->
-        <flowerpot.authorize.service.version>1.0.0</flowerpot.authorize.service.version>
+        <flowerpot.authorize.version>1.0.0</flowerpot.authorize.version>
         <!-- 依赖管理 版本号 End -->
 
         <springfox.version>2.9.2</springfox.version>
@@ -95,24 +95,24 @@
             <!-- System Service 模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-system-service</artifactId>
-                <version>${flowerpot.system.service.version}</version>
+                <artifactId>flowerpot-system</artifactId>
+                <version>${flowerpot.system.version}</version>
                 <type>pom</type>
             </dependency>
 
             <!-- MailBox Service 邮箱模块 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-mailbox-service</artifactId>
-                <version>${flowerpot.mailbox.service.version}</version>
+                <artifactId>flowerpot-mailbox</artifactId>
+                <version>${flowerpot.mailbox.version}</version>
                 <type>pom</type>
             </dependency>
 
             <!-- Storage Service 存储服务 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-storage-service</artifactId>
-                <version>${flowerpot.storage.service.version}</version>
+                <artifactId>flowerpot-storage</artifactId>
+                <version>${flowerpot.storage.version}</version>
                 <type>pom</type>
             </dependency>
 

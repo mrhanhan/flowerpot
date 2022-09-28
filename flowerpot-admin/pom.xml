@@ -32,24 +32,24 @@
             <!-- 邮箱服务 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-mailbox-service</artifactId>
-                <version>${flowerpot.mailbox.service.version}</version>
+                <artifactId>flowerpot-mailbox</artifactId>
+                <version>${flowerpot.mailbox.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <!-- 存储服务 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-storage-service</artifactId>
-                <version>${flowerpot.storage.service.version}</version>
+                <artifactId>flowerpot-storage</artifactId>
+                <version>${flowerpot.storage.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <!-- 受权服务 -->
             <dependency>
                 <groupId>com.flowerpot</groupId>
-                <artifactId>flowerpot-authorize-service</artifactId>
-                <version>${flowerpot.authorize.service.version}</version>
+                <artifactId>flowerpot-authorize</artifactId>
+                <version>${flowerpot.authorize.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

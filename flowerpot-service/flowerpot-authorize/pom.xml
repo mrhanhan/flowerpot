@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>flowerpot-service</artifactId>
+        <groupId>com.flowerpot</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>flowerpot-authorize</artifactId>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>flowerpot-authorize-common</module>
+        <module>flowerpot-authorize-api</module>
+        <module>flowerpot-authorize-service</module>
+    </modules>
+
+    <properties>
+        <flowerpot.authorize.common.version>1.0.0</flowerpot.authorize.common.version>
+        <flowerpot.authorize.api.version>1.0.0</flowerpot.authorize.api.version>
+        <flowerpot.authorize.service.version>1.0.0</flowerpot.authorize.service.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- common -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-authorize-common</artifactId>
+                <version>${flowerpot.authorize.common.version}</version>
+            </dependency>
+            <!-- api -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-authorize-api</artifactId>
+                <version>${flowerpot.authorize.api.version}</version>
+            </dependency>
+            <!-- impl -->
+            <dependency>
+                <groupId>com.flowerpot</groupId>
+                <artifactId>flowerpot-authorize-service</artifactId>
+                <version>${flowerpot.authorize.service.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

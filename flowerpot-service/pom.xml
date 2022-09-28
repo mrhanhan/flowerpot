@@ -18,10 +18,10 @@
     </description>
 
     <modules>
-        <module>flowerpot-system-service</module>
-        <module>flowerpot-mailbox-service</module>
-        <module>flowerpot-storage-service</module>
-        <module>flowerpot-authorize-service</module>
+        <module>flowerpot-system</module>
+        <module>flowerpot-mailbox</module>
+        <module>flowerpot-storage</module>
+        <module>flowerpot-authorize</module>
     </modules>
 
     <!-- 共同依赖的模块  -->
@@ -47,7 +47,13 @@
             <artifactId>flowerpot-common</artifactId>
             <optional>true</optional>
         </dependency>
-
+        <!-- Swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>
